@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Beni's QA BLOG</title>
+    <link rel="stylesheet" href="mystyle.css">
+    <link rel="stylesheet" href="mystyle3.css">
+  </head>
+  <body>
+
+    <div class="toptitle" style="padding-left:16px">
+      <h1 style="font-size:60px">Beni's blog</h1>
+      <br>
+      <h2>Welcome to the QA BLOG</h2>
+    </div>
+
+  <div class="topnav">
+    <a class="active" href="index.html">Home</a>
+    <a href="Resources.html">Resources</a>
+    <a href="def.html">QA definition</a>
+    <a href="about.html">About</a>
+  </div>
+
+  <div class="middle">
+    <h3>This blog is intended for all software testers <br>To get information about the world of QA<br> also to laugh a little
+and especially to learn beyond existing knowledge.</h3>
+  </div>
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <img src="images/1.jpg" style="width:100%;height:500px">
+
+</div>
+
+<div class="mySlides fade">
+  <img src="images/2.jpg" style="width:100%">
+
+</div>
+
+<div class="mySlides fade">
+  <img src="images/3.jpg" style="width:100%">
+</div>
+
+<div class="mySlides fade">
+  <img src="images/4.jpg" style="width:100%">
+
+</div>
+
+<div class="mySlides fade">
+  <img src="images/5.jpg" style="width:100%">
+
+</div>
+<div class="mySlides fade">
+  <img src="images/11.jpg" style="width:100%;height:300px">
+
+</div>
+<div class="mySlides fade">
+  <img src="images/13.jpg" style="width:100%;height:300px">
+
+</div>
+<div class="mySlides fade">
+  <img src="images/15.jpg" style="width:100%;height:300px">
+
+</div>
+<div class="mySlides fade">
+  <img src="images/17.jpg" style="width:100%;height:300px">
+
+</div>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+
+</div>
+
+<div class="copy" style="font:Times New Roman;text-align: center;">
+  <p>&copy; 2020 Benjamin Kun</p>
+
+</div>
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides","mySlides2");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 6000); // Change image every 2 seconds
+}
+</script>
+
+
+
+  </body>
+</html>

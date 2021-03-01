@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="mystyle.css">
+    <link rel="stylesheet" href="acc.css">
+
+
+    <title>Resources
+    </title>
+  </head>
+  <body>
+
+    <div class="toptitle" style="padding-left:16px">
+      <h1 style="font-size:60px">Beni's blog</h1>
+      <br>
+      <h2>Welcome to the QA BLOG</h2>
+    </div>
+
+  <div class="topnav">
+    <a  href="index.html">Home</a>
+    <a class="active" href="Resources.html">Resources</a>
+    <a href="def.html">QA definition</a>
+    <a href="about.html">About</a>
+  </div>
+
+  <h2 style="padding:40px;text-align:center">Here you will find links to learning sources, job search sites, software testing forums, etc.</h2>
+
+  <button class="accordion">Job finding</button>
+  <div class="panel">
+    <ul>
+  <li><a href="https://www.drushim.co.il/jobs/cat24/"target="_blank" >drushim</a></li>
+  <li><a href="https://qualitestgroup.com/careers/open-positions/"target="_blank">qualitestgroup</a></li>
+  <li><a href="https://www.ness-tech.co.il/careers/"target="_blank">ness-tech</a></li>
+  <li><a href="https://il.indeed.com/jobs?q=qa&fromage=last&sort=date"target="_blank">indeed</a></li>
+  <li><a href="https://www.facebook.com/groups/123583351120353/"target="_blank">QA Engineer in israel</a></li>
+  <li><a href="https://he-il.facebook.com/groups/QAjobs/"target="_blank">QAjobs</a></li>
+  <li><a href="https://t.me/IL_QA_Job">QA jobs telegram</a></li>
+
+</ul>
+  </div>
+
+  <button class="accordion">QA blogs</button>
+  <div class="panel">
+
+    <ul>
+  <li><a href="https://www.guru99.com/"target="_blank">guru99</a></li>
+  <li><a href="https://www.testbytes.net/blog/software-testing-tutorial-for-beginners/"target="_blank">testbytes</a></li>
+  <li><a href="https://www.toolsqa.com/"target="_blank"target="_blank">toolsqa</a></li>
+  <li><a href="https://www.softwaretestinghelp.com/"target="_blank">softwaretestinghelp</a></li>
+  <li><a href="https://blog.testlodge.com/"target="_blank">testlodge</a></li>
+  <li><a href="https://strongqa.com/qa-portal/knowledge-base"target="_blank">strongqa</a></li>
+  <li><a href="https://www.softwaretestingmaterial.com/"target="_blank">softwaretestingmaterial</a></li>
+  <li><a href="https://artoftesting.com/"target="_blank">artoftesting</a></li>
+  <li><a href="https://softwaretestingfundamentals.com/"target="_blank">softwaretestingfundamentals</a></li>
+
+</ul>
+  </div>
+
+  <button class="accordion">QA forums</button>
+  <div class="panel">
+    <ul>
+  <li><a href="https://he-il.facebook.com/groups/IL.Testing.QA/"target="_blank">TESTIL</a></li>
+  <li><a href="http://bit.ly/Test_IL-Teleg"target="_blank">TESTIL telegram</a></li>
+  <li><a href="http://www.testingworld.co.il/"target="_blank">testingworld</a></li>
+</ul>
+  </div>
+
+  <script>
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("actived");
+      var panel = this.nextElementSibling;
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      }
+    });
+  }
+  </script>
+  </body>
+  <div class="copy" style="font:Times New Roman;text-align: center;">
+    <p>&copy; 2020 Benjamin Kun</p>
+
+  </div>
+</html>

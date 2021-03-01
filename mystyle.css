@@ -1,0 +1,103 @@
+h1,h2{
+
+  margin: auto;
+  font-family: "Oswald"
+
+}
+
+.toptitle{
+  text-align: center;
+  background-color:#66ccff
+
+}
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ccffcc;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #0099ff;
+  color: white;
+}
+
+
+body, html {
+  height: 80%;
+  margin: 0;
+  font-family: Verdana, sans-serif;
+
+}
+
+.hero-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("beni.jpg");
+  height: 100%;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+
+.fa {
+  padding: 15px;
+  font-size: 25px;
+  width: 25px;
+  text-align: center;
+  text-decoration: none;
+  margin: 7px 7px;
+  border-radius: 50%;
+
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: black;
+}
+
+.fa-github {
+  background: #55ACEE;
+  color: black;
+}
+.middle{
+  text-align: center;
+  }
+
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #000;
+  height: 30%;
+
+
+}

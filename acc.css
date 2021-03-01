@@ -1,0 +1,52 @@
+.accordion {
+  background-color: #ccffcc	;
+  color: #444;
+  cursor: pointer;
+  padding: 40px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 20px;
+  transition: 0.4s;
+}
+
+.actived, .accordion:hover {
+  background-color: #00ffff;
+}
+
+.accordion:after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.actived:after {
+  content: "\2212";
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: #ffcc99;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+li{
+  margin: 10px;
+}
+
+
+li a{
+color: #0033cc;
+font-style:oblique;
+font-size: 20px
+
+
+}
+li a:hover{
+color: green;
+
+}
