@@ -6,7 +6,22 @@
     <title>Benjamin "Beni" Kun, QA automation engineer</title>
     <meta name="description" content="QA automation engineer. End-to-end Python suites, parallel runs, reports, and CI for a multi-region SaaS platform.">
     <link rel="canonical" href="https://benikun88.github.io/">
-    <meta name="theme-color" content="#14120f">
+    <meta name="theme-color" content="#f2f7f7">
+    <script>
+      (function () {
+        var theme = "light";
+        try {
+          var saved = localStorage.getItem("theme");
+          if (saved === "light" || saved === "dark") theme = saved;
+          else if (window.matchMedia("(prefers-color-scheme: dark)").matches) theme = "dark";
+        } catch (error) {
+          theme = "light";
+        }
+        document.documentElement.setAttribute("data-theme", theme);
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.setAttribute("content", theme === "dark" ? "#0c161b" : "#f2f7f7");
+      })();
+    </script>
     <meta property="og:title" content="Benjamin &quot;Beni&quot; Kun, QA automation engineer">
     <meta property="og:description" content="QA automation engineer. End-to-end Python suites, parallel runs, reports, and CI for a multi-region SaaS platform.">
     <meta property="og:type" content="profile">
@@ -44,15 +59,19 @@
     <a class="skip-link" href="#content">Skip to content</a>
     <header class="site-header">
       <a class="brand" href="#top">Beni Kun</a>
-      <nav aria-label="Sections">
-        <a href="#demo">Demo</a>
-        <a href="#work">Work</a>
-        <a href="#principles">How I work</a>
-        <a href="#stack">Stack</a>
-        <a href="#behind">Behind the video</a>
-        <a href="#sample-suite">Sample suite</a>
-        <a href="#contact">Contact</a>
-      </nav>
+      <div class="header-bar">
+        <nav aria-label="Sections">
+          <a href="#demo">Demo</a>
+          <a href="#work">Work</a>
+          <a href="#principles">How I work</a>
+          <a href="#stack">Stack</a>
+          <a href="#behind">Behind the video</a>
+          <a href="#sample-suite">Sample suite</a>
+          <a href="#hobbies">Hobbies</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <button type="button" id="theme-toggle" aria-pressed="false">Dark mode</button>
+      </div>
     </header>
     <main id="content">
       <section class="hero" id="top" aria-labelledby="name">
@@ -303,6 +322,20 @@ python -m playwright install chromium
 python -m pytest</code></pre>
         <p>The shop refuses a headless Chromium. Run the command on a machine with a display, or use <code>xvfb-run -a python -m pytest</code> on Linux.</p>
         <p><a href="https://github.com/benikun88/benikun88.github.io/tree/master/sample-suite">Sample suite on GitHub</a></p>
+      </section>
+
+      <section id="hobbies" aria-labelledby="hobbies-heading">
+        <h2 id="hobbies-heading">Hobbies</h2>
+        <ul class="hobbies">
+          <li>
+            <h3>Marvel comics</h3>
+            <p>I read Marvel comics.</p>
+          </li>
+          <li>
+            <h3>Technical trading</h3>
+            <p>I follow the stock market and trade from the charts.</p>
+          </li>
+        </ul>
       </section>
 
       <section id="contact" aria-labelledby="contact-heading">

@@ -160,29 +160,33 @@
     });
   });
 
-  var motion = window.matchMedia("(prefers-reduced-motion: reduce)");
-  if (document.startViewTransition) {
-    document.addEventListener("click", function (event) {
-      if (motion.matches || event.defaultPrevented || event.button !== 0) {
-        return;
-      }
-      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
-        return;
-      }
-      var link = event.target.closest("a[href^='#']");
-      if (!link) {
-        return;
-      }
-      var id = link.getAttribute("href").slice(1);
-      var target = document.getElementById(id);
-      if (!target) {
-        return;
-      }
-      event.preventDefault();
-      document.startViewTransition(function () {
-        target.scrollIntoView();
-        history.pushState(null, "", "#" + id);
-      });
-    });
+})();
+
+(function () {
+  var toggle = document.getElementById("theme-toggle");
+  if (!toggle) return;
+
+  function current() {
+    return document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
   }
+
+  function paint(theme) {
+    document.documentElement.setAttribute("data-theme", theme);
+    var meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute("content", theme === "dark" ? "#0c161b" : "#f2f7f7");
+    var dark = theme === "dark";
+    toggle.textContent = dark ? "Light mode" : "Dark mode";
+    toggle.setAttribute("aria-pressed", dark ? "true" : "false");
+  }
+
+  paint(current());
+  toggle.addEventListener("click", function () {
+    var next = current() === "dark" ? "light" : "dark";
+    try {
+      localStorage.setItem("theme", next);
+    } catch (error) {
+      /* keep the choice for this view */
+    }
+    paint(next);
+  });
 })();

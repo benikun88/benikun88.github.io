@@ -10,6 +10,7 @@ HEADINGS = (
     "Stack",
     "Behind the video",
     "Sample suite",
+    "Hobbies",
     "Contact",
 )
 
@@ -76,6 +77,18 @@ def test_poster_and_captions_are_served(page, site_url):
     assert poster.status == 200
     assert captions.status == 200
     assert captions.text().startswith("WEBVTT")
+
+
+def test_theme_toggle_switches_mode(site):
+    toggle = site.get_by_role("button", name=re.compile(r"mode", re.I))
+    expect(toggle).to_be_visible()
+    before = site.locator("html").get_attribute("data-theme")
+    toggle.click()
+    after = site.locator("html").get_attribute("data-theme")
+    assert before in {"light", "dark"}
+    assert after in {"light", "dark"}
+    assert before != after
+    expect(site.get_by_role("heading", name="Stack", level=2)).to_be_visible()
 
 
 def test_mobile_hero_stays_visible(page, site_url):
