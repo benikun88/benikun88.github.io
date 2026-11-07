@@ -78,7 +78,9 @@ If an encoded file is larger than 25 MB, switch the player to an unlisted embed 
 
 ## Sanitization
 
-This site is public. Do not add employer names, internal product names, hostnames, ticket keys, work email addresses, cloud account or bucket names, customer or tenant identifiers, phone numbers, or screenshots from work systems. The demo may record only the public practice shop and this sample suite. Do not paste work code into the sample suite.
+This site is public. Employer and organization names are shown exactly as they appear on the public LinkedIn profile (<https://www.linkedin.com/in/benjamin-kun>): Via, StartAch (volunteer), Moovit, SMARTSHOOTER (via Qualitest), Scodix, HOT, and IAF - Israeli Air Force. Do not add anything else from work: internal product or project names, internal hostnames or URLs, ticket keys, work email addresses, cloud account IDs or bucket names, customer, city, or tenant identifiers, phone numbers, or screenshots, dashboards, or code from work systems. The demo may record only the public practice shop and this sample suite.
+
+`tests/test_sanitization.py` scans every text file in the repository for those patterns, plus the remaining blocked names, work domains, and work details that are deliberately left off the site. It also checks that the employer names above pass. `video/render.py` applies the same blocked-term list to the video sources.
 
 Unknowns stay visible as placeholders: `{{CONTACT_EMAIL}}`, `{{N_TESTS}}`, `{{N_MODULES}}`, `{{N_PAGE_OBJECTS}}`. Do not invent numbers or an email address.
 

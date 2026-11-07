@@ -137,8 +137,20 @@ def test_showcase_filter_and_modal(site):
 
 
 def test_career_timeline_and_credentials(site):
-    expect(site.locator(".career")).to_have_count(6)
+    expect(site.locator(".career")).to_have_count(7)
     expect(site.locator(".career-date").first).to_have_text("JUN 2024 — PRESENT")
+    expect(site.locator(".career-name")).to_have_text(
+        [
+            "Via",
+            "סטארט-אח - StartAch",
+            "Moovit",
+            "SMARTSHOOTER (via Qualitest)",
+            "Scodix",
+            "HOT",
+            "IAF - Israeli Air Force",
+        ]
+    )
+    expect(site.get_by_text("IAF Technological College Amal Holtz")).to_be_visible()
     expect(site.get_by_text("B.Sc. Computer Science")).to_be_visible()
     expect(site.get_by_text("Holon Institute of Technology")).to_be_visible()
     for language in ("Hebrew", "Romanian", "English"):

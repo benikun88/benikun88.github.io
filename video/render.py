@@ -70,22 +70,16 @@ from slides import (  # noqa: E402
 )
 
 # Terms are stored encoded so the plaintext is not part of the source.
+# Employer names from the public LinkedIn profile are allowed. Work domains,
+# work email addresses, and names that are not on the profile stay blocked.
 _ENCODED_TERMS = (
-    "Vmlh",
-    "UmlkZSB3aXRoIFZpYQ==",
     "cmlkZXdpdGh2aWE=",
     "cmlkZXdpdGh2aWEuY29t",
-    "TW9vdml0",
-    "U01BUlRTSE9PVEVS",
-    "U21hcnQgU2hvb3Rlcg==",
-    "U21hcnRzaG9vdGVy",
-    "UXVhbGl0ZXN0",
-    "U2NvZGl4",
     "QXRlcmE=",
     "Um9iaW4=",
     "QHJpZGV3aXRodmlhLmNvbQ==",
 )
-_WORD_TERMS = {base64.b64decode(item).decode() for item in ("Vmlh", "Um9iaW4=")}
+_WORD_TERMS = {base64.b64decode(item).decode() for item in ("Um9iaW4=",)}
 
 
 @dataclass
