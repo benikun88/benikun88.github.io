@@ -2,7 +2,9 @@
   "name": "beni-portfolio",
   "private": true,
   "scripts": {
-    "sass": "sass scss/main.scss styles.css --style=compressed --no-source-map"
+    "sass": "sass scss/main.scss styles.css --style=compressed --no-source-map",
+    "stamp": "node scripts/stamp-assets.mjs",
+    "build": "npm run sass && npm run stamp"
   },
   "devDependencies": {
     "sass": "^1.83.0"
