@@ -1,52 +1,64 @@
-@use "sass:map";
+$display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+$body: "DM Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+$mono: "DM Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+
+$radius: 22px;
+
+$bp-wide: 1050px;
+$bp-tablet: 800px;
+$bp-phone: 600px;
+
+// `accent` fills buttons and pills; `accent-ink` is the same hue darkened
+// where it sits on the page background as text (AA on the light theme).
+$dark: (
+  bg: #090b11,
+  surface: #11141d,
+  surface2: #171b26,
+  ink: #f3f4f5,
+  muted: #8f95a7,
+  line: #292e3c,
+  accent: #c6ff64,
+  accent-ink: #c6ff64,
+  on-accent: #10140b,
+  violet: #a78bfa,
+  cyan: #77e2ef,
+  pill-line: #456140,
+  shadow: 0 20px 80px rgba(0, 0, 0, 0.24),
+);
 
 $light: (
-  bg: #e7f5f3,
-  surface: #f8fffe,
-  ink: #062228,
-  muted: #35555a,
-  line: #b7d4d0,
-  aqua: #067874,
-  aqua-ink: #045e5b,
-  on-aqua: #f3fffe,
-  well: #041316,
-  glow: #12b5b0
+  bg: #f4f5f1,
+  surface: #ffffff,
+  surface2: #ecefe9,
+  ink: #11141a,
+  muted: #5a6168,
+  line: #d8dcd5,
+  accent: #a0d53e,
+  accent-ink: #3d6410,
+  on-accent: #10140b,
+  violet: #6a45b8,
+  cyan: #13778a,
+  pill-line: #a6c77a,
+  shadow: 0 20px 65px rgba(50, 60, 40, 0.09),
 );
 
-$dark: (
-  bg: #071416,
-  surface: #0d2428,
-  ink: #e7f6f4,
-  muted: #b7d4d0,
-  line: #1e3d42,
-  aqua: #5eead4,
-  aqua-ink: #7df6e4,
-  on-aqua: #042226,
-  well: #041316,
-  glow: #5eead4
-);
-
-$rail: #041316;
-$rail-ink: #e7f6f4;
-$rail-muted: #9ec9c4;
-$rail-line: #1c3c40;
-
-$sans: "Segoe UI", "Liberation Sans", system-ui, sans-serif;
-$serif: "Iowan Old Style", Palatino, Georgia, "Liberation Serif", serif;
-$mono: ui-monospace, "Liberation Mono", Menlo, Consolas, monospace;
-
-$step-0: clamp(1.02rem, 0.98rem + 0.2vw, 1.125rem);
-$step-1: clamp(1.3rem, 1.05rem + 0.8vw, 1.7rem);
-$step-2: clamp(1.8rem, 1.2rem + 1.6vw, 2.5rem);
-$step-3: clamp(3rem, 1.2rem + 6vw, 6.2rem);
-
-@mixin theme($tokens) {
-  @each $name, $value in $tokens {
+@mixin theme($map) {
+  @each $name, $value in $map {
     --#{"" + $name}: #{$value};
   }
 }
 
+@mixin mono($size: 11px, $weight: 400) {
+  font: $weight #{$size} $mono;
+}
+
 @mixin focus-ring {
-  outline: 2px solid var(--glow);
-  outline-offset: 3px;
+  outline: 2px solid var(--accent-ink);
+  outline-offset: 4px;
+}
+
+@mixin below($width) {
+  @media (max-width: $width) {
+    @content;
+  }
 }

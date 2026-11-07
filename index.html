@@ -1,43 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Benjamin "Beni" Kun, QA automation engineer</title>
-    <meta name="description" content="QA automation engineer. End-to-end Python suites, parallel runs, reports, and CI for a multi-region SaaS platform.">
+    <title>Benjamin "Beni" Kun, Senior QA &amp; Automation Engineer</title>
+    <meta name="description" content="Senior QA and automation engineer with 7+ years in QA. Python, Playwright, and Pytest frameworks, mobile and API testing, CI, and AI-assisted test design.">
     <link rel="canonical" href="https://benikun88.github.io/">
-    <meta name="theme-color" content="#e7f5f3">
+    <meta name="theme-color" content="#090b11">
     <script>
       (function () {
-        var theme = "light";
+        var root = document.documentElement;
+        var theme = "dark";
         try {
-          var saved = localStorage.getItem("theme");
-          if (saved === "light" || saved === "dark") theme = saved;
-          else if (window.matchMedia("(prefers-color-scheme: dark)").matches) theme = "dark";
+          if (localStorage.getItem("theme") === "light") theme = "light";
         } catch (error) {
-          theme = "light";
+          theme = "dark";
         }
-        document.documentElement.setAttribute("data-theme", theme);
+        root.setAttribute("data-theme", theme);
+        root.classList.add("js");
         var meta = document.querySelector('meta[name="theme-color"]');
-        if (meta) meta.setAttribute("content", theme === "dark" ? "#071416" : "#e7f5f3");
+        if (meta) meta.setAttribute("content", theme === "light" ? "#f4f5f1" : "#090b11");
       })();
     </script>
-    <meta property="og:title" content="Benjamin &quot;Beni&quot; Kun, QA automation engineer">
-    <meta property="og:description" content="QA automation engineer. End-to-end Python suites, parallel runs, reports, and CI for a multi-region SaaS platform.">
+    <meta property="og:title" content="Benjamin &quot;Beni&quot; Kun, Senior QA &amp; Automation Engineer">
+    <meta property="og:description" content="Senior QA and automation engineer with 7+ years in QA. Python, Playwright, and Pytest frameworks, mobile and API testing, CI, and AI-assisted test design.">
     <meta property="og:type" content="profile">
     <meta property="og:url" content="https://benikun88.github.io/">
     <meta property="og:image" content="https://benikun88.github.io/assets/og-card.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Benjamin Kun, QA automation engineer">
+    <meta property="og:image:alt" content="Benjamin Kun, Senior QA and Automation Engineer">
     <meta property="profile:first_name" content="Benjamin">
     <meta property="profile:last_name" content="Kun">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Benjamin &quot;Beni&quot; Kun, QA automation engineer">
-    <meta name="twitter:description" content="QA automation engineer. End-to-end Python suites, parallel runs, reports, and CI for a multi-region SaaS platform.">
+    <meta name="twitter:title" content="Benjamin &quot;Beni&quot; Kun, Senior QA &amp; Automation Engineer">
+    <meta name="twitter:description" content="Senior QA and automation engineer with 7+ years in QA. Python, Playwright, and Pytest frameworks, mobile and API testing, CI, and AI-assisted test design.">
     <meta name="twitter:image" content="https://benikun88.github.io/assets/og-card.png">
-    <meta name="twitter:image:alt" content="Benjamin Kun, QA automation engineer">
+    <meta name="twitter:image:alt" content="Benjamin Kun, Senior QA and Automation Engineer">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="preload" href="assets/fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/dm-sans.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="styles.css">
     <script type="application/ld+json">
       {
@@ -45,9 +47,13 @@
         "@type": "Person",
         "name": "Benjamin Kun",
         "alternateName": ["Beni Kun", "Beni"],
-        "jobTitle": "QA automation engineer",
-        "description": "QA automation engineer. End-to-end Python suites, parallel runs, reports, and CI for a multi-region SaaS platform.",
+        "jobTitle": "Senior QA & Automation Engineer",
+        "description": "Senior QA and automation engineer with 7+ years in QA.",
+        "email": "mailto:benikun88@gmail.com",
         "url": "https://benikun88.github.io/",
+        "address": { "@type": "PostalAddress", "addressRegion": "Center District", "addressCountry": "IL" },
+        "knowsLanguage": ["he", "en", "ro"],
+        "alumniOf": { "@type": "CollegeOrUniversity", "name": "Holon Institute of Technology" },
         "sameAs": [
           "https://www.linkedin.com/in/benjamin-kun",
           "https://github.com/benikun88"
@@ -56,65 +62,342 @@
     </script>
   </head>
   <body>
-    <div class="progress" id="scroll-progress" aria-hidden="true"></div>
     <a class="skip-link" href="#content">Skip to content</a>
-    <div class="app">
-    <header class="rail">
-      <a class="brand" href="#top">
-        <span class="brand-mark" aria-hidden="true"></span>
-        Beni Kun
-      </a>
-      <p class="rail-role">QA automation engineer</p>
-      <p class="rail-now">Now viewing <span id="rail-section">Intro</span></p>
-      <nav aria-label="Sections">
-        <a href="#top">Intro</a>
-        <a href="#demo">Demo</a>
-        <a href="#work">Work</a>
-        <a href="#principles">How I work</a>
-        <a href="#stack">Stack</a>
-        <a href="#behind">Behind the video</a>
-        <a href="#sample-suite">Sample suite</a>
-        <a href="#hobbies">Hobbies</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <button type="button" id="theme-toggle" aria-pressed="false">Dark mode</button>
-    </header>
+    <div class="grain" aria-hidden="true"></div>
+
+    <div class="container">
+      <header class="site-header">
+        <a class="brand" href="#top">
+          <span class="brand-mark" aria-hidden="true">BK</span>
+          <span>BENJAMIN KUN<small>QUALITY IS ENGINEERED.</small></span>
+        </a>
+        <nav class="nav-links" id="nav-links" aria-label="Sections">
+          <a href="#about">About</a>
+          <a href="#work">Showcase</a>
+          <a href="#demo">Showreel</a>
+          <a href="#experience">Experience</a>
+          <a href="#stack">Stack</a>
+          <a href="#hobbies">Hobbies</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div class="header-actions">
+          <button class="icon-button theme-icon" type="button" id="theme-toggle" aria-label="Switch to light mode">
+            <span class="sun" aria-hidden="true">☼</span><span class="moon" aria-hidden="true">☾</span>
+          </button>
+          <a class="contact-top" href="mailto:benikun88@gmail.com">Let's connect <span aria-hidden="true">↗</span></a>
+          <button class="icon-button menu-toggle" type="button" id="menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><span aria-hidden="true">☰</span></button>
+        </div>
+      </header>
+    </div>
+
     <main id="content">
-      <section class="hero" id="top" aria-labelledby="name">
-        <p class="kicker">Public portfolio</p>
-        <h1 id="name">Benjamin "Beni" Kun</h1>
-        <p class="role">QA automation engineer</p>
-        <p class="lede">I build end-to-end test frameworks for a multi-region SaaS platform, parallel runs around scarce test data, and the reports and pipelines that show what failed.</p>
-        <div class="actions">
-          <a class="button" href="#demo">Watch demo (90 s)</a>
-          <a class="button button-quiet" href="https://www.linkedin.com/in/benjamin-kun" rel="me">LinkedIn</a>
-          <a class="button button-quiet" href="https://github.com/benikun88" rel="me">GitHub</a>
-          <a class="button button-quiet" href="#sample-suite">Sample suite</a>
+      <div class="hero-band">
+        <div class="orb one" aria-hidden="true"></div>
+        <div class="orb two" aria-hidden="true"></div>
+        <div class="container">
+          <section class="hero" id="top" aria-labelledby="hero-heading">
+            <div class="hero-content">
+              <p class="availability"><span class="pulse" aria-hidden="true"></span> OPEN TO CONNECTING &amp; COLLABORATING</p>
+              <h1 id="hero-heading">Breaking<br><span class="outline">things.</span><br><span class="accent">Building</span><br>confidence.</h1>
+              <p class="hero-desc">Hey, I'm <strong>Benjamin "Beni" Kun</strong>, a <strong>Senior QA &amp; Automation Engineer</strong> with 7+ years in QA. I turn complicated software into reliable experiences through automation, deep debugging, and a habit of asking what the user will actually see.</p>
+              <div class="hero-buttons">
+                <a class="button button-primary" href="#work">Explore my work <span aria-hidden="true">↗</span></a>
+                <a class="button button-secondary" href="#demo">Watch the reel (90 s) <span aria-hidden="true">▶</span></a>
+                <a class="button button-secondary" href="#experience">My journey <span aria-hidden="true">↓</span></a>
+              </div>
+              <ul class="social-row" aria-label="Profiles">
+                <li aria-hidden="true">FIND ME ON</li>
+                <li><a href="https://www.linkedin.com/in/benjamin-kun" rel="me noopener" target="_blank">LINKEDIN <span aria-hidden="true">↗</span></a></li>
+                <li><a href="https://github.com/benikun88" rel="me noopener" target="_blank">GITHUB <span aria-hidden="true">↗</span></a></li>
+                <li><a href="mailto:benikun88@gmail.com">EMAIL <span aria-hidden="true">↗</span></a></li>
+                <li><a href="https://bit.ly/30C4Jhf" rel="noopener" target="_blank">BLOG <span aria-hidden="true">↗</span></a></li>
+              </ul>
+            </div>
+
+            <div class="hero-visual" aria-hidden="true">
+              <div class="floating-orbit">✳</div>
+              <div class="workspace">
+                <div class="workspace-top">
+                  <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+                  <div class="workspace-title">quality-engineering / workspace</div>
+                </div>
+                <div class="workspace-body">
+                  <div class="dash-head"><p>Quality engineering cockpit</p><span>● SYSTEM READY</span></div>
+                  <p class="dash-sub">The public sample suite, run against the practice shop</p>
+                  <div class="mini-stats">
+                    <div class="mini-stat"><small>EXPERIENCE</small><strong>7<span class="good">+</span></strong></div>
+                    <div class="mini-stat"><small>FOCUS</small><strong>FE<span class="good">/</span>BE</strong></div>
+                    <div class="mini-stat"><small>MINDSET</small><strong class="good">E2E</strong></div>
+                  </div>
+                  <div class="terminal">
+                    <div class="terminal-bar">● ~/benjamin/sample-suite &nbsp;›&nbsp; pytest -v</div>
+                    <div class="terminal-line"><span class="pu">$</span> xvfb-run -a pytest <span class="cy">--junitxml=reports/junit.xml</span></div>
+                    <div class="terminal-line"><span class="gr">✓</span> test_search_finds_named_product</div>
+                    <div class="terminal-line"><span class="gr">✓</span> test_cart_total_is_unit_price_times_quantity</div>
+                    <div class="terminal-line"><span class="gr">✓</span> test_product_list_matches_schema</div>
+                    <div class="terminal-line"><span class="cy">→</span> quality isn't a phase. it's a mindset.</div>
+                    <div class="terminal-line"><span class="pu">$</span> <span class="terminal-caret"></span></div>
+                  </div>
+                </div>
+              </div>
+              <p class="floating-ticket"><small>PERSONAL PHILOSOPHY</small><strong>Think like a user.<br>Test like an engineer. ↗</strong></p>
+            </div>
+
+            <div class="hero-foot" aria-hidden="true">
+              <div class="scroll-indicator"><span class="scroll-line"></span> SCROLL TO EXPLORE</div>
+              <span>CENTER DISTRICT, ISRAEL · WORKING ACROSS SYSTEMS</span>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div class="marquee-wrap" aria-hidden="true">
+        <div class="marquee">
+          <span>PYTHON <i>✳</i> PLAYWRIGHT <i>✳</i> PYTEST <i>✳</i> APPIUM <i>✳</i> API TESTING <i>✳</i> CI/CD <i>✳</i> AI-ASSISTED QA <i>✳</i> MOBILE TESTING <i>✳</i></span>
+          <span>PYTHON <i>✳</i> PLAYWRIGHT <i>✳</i> PYTEST <i>✳</i> APPIUM <i>✳</i> API TESTING <i>✳</i> CI/CD <i>✳</i> AI-ASSISTED QA <i>✳</i> MOBILE TESTING <i>✳</i></span>
+        </div>
+      </div>
+
+      <section class="section container" id="about" aria-labelledby="about-heading">
+        <div class="section-top reveal">
+          <div>
+            <p class="eyebrow">01 / The person behind the tests</p>
+            <h2 id="about-heading">More than<br>finding bugs<span class="accent">.</span></h2>
+          </div>
+          <p class="section-intro">I care about the whole product, the people using it, and the engineering culture that makes it dependable.</p>
+        </div>
+        <div class="about-grid">
+          <div class="card about-card reveal">
+            <div class="about-icon" aria-hidden="true">✳</div>
+            <p>I work on <strong>frontend and backend quality</strong>, combining hands-on investigation with automation that scales. <span>From embedded hardware to mobility platforms, I connect product behaviour, code, data, and infrastructure to what the user experiences. I have led QA delivery teams and built end-to-end infrastructure from scratch.</span></p>
+          </div>
+          <div class="card fact-card reveal">
+            <div>
+              <p class="eyebrow">Experience in QA</p>
+              <p class="fact-value">7+</p>
+              <p class="fact-label">Years of test management, automation, and hands-on QA.</p>
+            </div>
+            <div class="fact-foot">
+              <span class="tiny-pill">Automation-first</span>
+              <span class="tiny-pill">Problem solver</span>
+              <span class="tiny-pill">Systems thinker</span>
+            </div>
+          </div>
+        </div>
+        <div class="capabilities">
+          <article class="card capability reveal">
+            <div class="cap-icon" aria-hidden="true">⌘</div>
+            <h3>Automation architecture</h3>
+            <p>Maintainable end-to-end frameworks, from UI journeys to API and backend checks, with Selenium, Appium, and Pytest behind them.</p>
+          </article>
+          <article class="card capability reveal">
+            <div class="cap-icon" aria-hidden="true">◇</div>
+            <h3>Deep debugging</h3>
+            <p>Tracing issues through logs, network traffic, and data with Postman, Charles Proxy, Coralogix, Kibana, MongoDB, and PL/SQL.</p>
+          </article>
+          <article class="card capability reveal">
+            <div class="cap-icon" aria-hidden="true">✧</div>
+            <h3>Smarter QA with AI</h3>
+            <p>AI-assisted workflows that speed up test planning, script creation, and refactoring, with engineering review kept in the loop.</p>
+          </article>
         </div>
       </section>
 
-      <section id="demo" aria-labelledby="demo-heading">
-        <h2 id="demo-heading">Demo</h2>
-        <p>Ninety seconds. The live portion is the public practice shop at <a href="https://practicesoftwaretesting.com/">practicesoftwaretesting.com</a>, which uses synthetic catalog data. It is not a work system.</p>
-        <figure class="player">
-          <div class="stage">
-            <video id="demo-video" controls preload="metadata" poster="assets/poster.jpg" aria-label="90 second demo">
-              <source src="assets/demo.mp4" type="video/mp4">
-              <source src="assets/demo.webm" type="video/webm">
-              <track kind="captions" src="assets/captions.vtt" srclang="en" label="English" default>
-            </video>
-            <div class="hud" role="group" aria-label="Playback">
-              <button type="button" id="play-toggle">Play</button>
-              <p class="time" id="time-readout">0:00 / 0:00</p>
-              <label class="seek">
-                <span class="visually-hidden">Seek</span>
-                <input id="seek" type="range" min="0" max="90" value="0" step="0.1">
-              </label>
-              <button type="button" id="caption-toggle" aria-pressed="true">Captions</button>
-              <button type="button" id="full-toggle">Full screen</button>
+      <section class="section projects" id="work" aria-labelledby="work-heading">
+        <div class="container">
+          <div class="section-top reveal">
+            <div>
+              <p class="eyebrow">02 / Selected capabilities</p>
+              <h2 id="work-heading">Proof of<br><span class="accent">how I think.</span></h2>
             </div>
+            <p class="section-intro">A tour of the systems and approaches I work with. Open any card to see what sits under the hood.</p>
           </div>
-          <nav class="chapters" aria-label="Demo chapters">
+          <div class="filters" role="group" aria-label="Filter showcase">
+            <button class="filter" type="button" data-filter="all" aria-pressed="true">All work</button>
+            <button class="filter" type="button" data-filter="automation" aria-pressed="false">Automation</button>
+            <button class="filter" type="button" data-filter="ai" aria-pressed="false">AI workflows</button>
+            <button class="filter" type="button" data-filter="engineering" aria-pressed="false">Engineering</button>
+          </div>
+          <div class="project-grid">
+            <article class="card project reveal" data-category="automation">
+              <div class="project-art art-automation" aria-hidden="true">
+                <div class="art-label">01 / AUTOMATION FRAMEWORKS</div>
+                <div class="diagram-code"><span>from</span> playwright.sync_api <span>import</span> Page<br><span>def</span> test_checkout(page: Page):<br>&nbsp;&nbsp;&nbsp;&nbsp;search() → add_to_cart() → verify()<br>&nbsp;&nbsp;&nbsp;&nbsp;<span>assert</span> cart.total == price * qty</div>
+              </div>
+              <div class="project-copy">
+                <div class="project-meta"><span>FULL-STACK TESTING</span><span aria-hidden="true">↗ 01</span></div>
+                <h3>End-to-end automation</h3>
+                <p>Python, Playwright, and Pytest frameworks for frontend and backend coverage on a multi-region SaaS platform.</p>
+                <ul class="tags"><li class="tag">Python</li><li class="tag">Playwright</li><li class="tag">Pytest</li><li class="tag">E2E</li></ul>
+                <button class="project-link" type="button" aria-haspopup="dialog">Explore approach <span aria-hidden="true">↗</span></button>
+                <div class="project-detail" hidden>
+                  <p>Tests read like the manual steps, so a reviewer can follow them without reading the automation API.</p>
+                  <ul>
+                    <li>A base page class and one wrapper per page, dialog, or wizard. Playwright types stay out of the tests.</li>
+                    <li>Logs nested per phase and per step. Each test keeps its own logs, screenshots, and network log.</li>
+                    <li>Steps wait for the screen to show the state they need instead of sleeping, and locators work on the old and the new UI.</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <article class="card project reveal" data-category="automation engineering">
+              <div class="project-art art-parallel" aria-hidden="true">
+                <div class="art-label">02 / PARALLEL-SAFE RUNS</div>
+                <div class="lanes">
+                  <div>gw0 <span style="--w:82%"></span></div>
+                  <div>gw1 <span style="--w:64%"></span></div>
+                  <div>gw2 <span style="--w:91%"></span></div>
+                  <div>gw3 <span style="--w:48%"></span></div>
+                </div>
+                <div class="lock">🔒 pool.lock</div>
+              </div>
+              <div class="project-copy">
+                <div class="project-meta"><span>TEST DATA</span><span aria-hidden="true">↗ 02</span></div>
+                <h3>Parallel-safe runs</h3>
+                <p>Workers that run together share one login, and scarce test data is handed out once, under a lock.</p>
+                <ul class="tags"><li class="tag">pytest-xdist</li><li class="tag">File locks</li><li class="tag">TOTP MFA</li><li class="tag">Faker</li></ul>
+                <button class="project-link" type="button" aria-haspopup="dialog">Explore approach <span aria-hidden="true">↗</span></button>
+                <div class="project-detail" hidden>
+                  <p>Parallel runs should not fight over the same account or the same phone number.</p>
+                  <ul>
+                    <li>pytest-xdist workers share one logged-in session, created under a file lock. Login uses TOTP-based MFA.</li>
+                    <li>A pool of SMS-capable phone numbers is taken and released under file locks with timeouts.</li>
+                    <li>API clients create unique test data and check the responses. Fixtures tear it down so the next run starts clean.</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <article class="card project reveal" data-category="automation engineering">
+              <div class="project-art art-report" aria-hidden="true">
+                <div class="art-label">03 / REPORTS &amp; FLAKES</div>
+                <div class="report-art">
+                  <i></i><i></i><i></i><i class="f"></i><i></i><i></i><i></i><i></i><i class="x"></i><i></i>
+                  <i></i><i class="f"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                  <i></i><i></i><i></i><i></i><i class="f"></i><i></i><i></i><i></i><i></i><i></i>
+                </div>
+                <div class="report-legend"><span><b>■</b> pass</span><span><b class="f">■</b> flaky</span><span><b class="x">■</b> broken</span></div>
+              </div>
+              <div class="project-copy">
+                <div class="project-meta"><span>REPORTING</span><span aria-hidden="true">↗ 03</span></div>
+                <h3>Reports that separate flakes</h3>
+                <p>JUnit XML becomes a per-run HTML report and a cumulative dashboard that tells a flake from a real failure.</p>
+                <ul class="tags"><li class="tag">JUnit XML</li><li class="tag">Allure</li><li class="tag">S3</li><li class="tag">CloudFront</li><li class="tag">Slack</li></ul>
+                <button class="project-link" type="button" aria-haspopup="dialog">Explore approach <span aria-hidden="true">↗</span></button>
+                <div class="project-detail" hidden>
+                  <p>A job log does not show whether the suite is improving, or whether a failure is flaky.</p>
+                  <ul>
+                    <li>Per-run HTML reports, plus a dashboard with a pass-rate trend, a daily chart, and a run-history matrix.</li>
+                    <li>Flaky versus broken comes from run history, not from a guess.</li>
+                    <li>Published to S3 behind CloudFront. Slack notifications carry a direct link to the run.</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <article class="card project reveal" data-category="ai">
+              <div class="project-art art-ai" aria-hidden="true">
+                <div class="art-label">04 / AI × QUALITY</div>
+                <div class="node-flow"><div class="node">PRD + FIGMA</div><b>→</b><div class="node">AI + MCP</div><b>→</b><div class="node">TEST PLAN</div></div>
+              </div>
+              <div class="project-copy">
+                <div class="project-meta"><span>WORKFLOW DESIGN</span><span aria-hidden="true">↗ 04</span></div>
+                <h3>AI-assisted test design</h3>
+                <p>Cursor MCP with Jira and Figma turns product requirements and designs into test plans, and agent skills draft tests from the live UI.</p>
+                <ul class="tags"><li class="tag">Cursor</li><li class="tag">Claude Code</li><li class="tag">MCP</li><li class="tag">Jira</li><li class="tag">Figma</li></ul>
+                <button class="project-link" type="button" aria-haspopup="dialog">Explore approach <span aria-hidden="true">↗</span></button>
+                <div class="project-detail" hidden>
+                  <p>Modern tooling takes the repetitive planning work, and engineering review stays in the loop.</p>
+                  <ul>
+                    <li>Cursor MCP integrations with Jira and Figma generate STDs from PRDs and designs.</li>
+                    <li>Reusable agent skills inspect the live UI through Chrome DevTools MCP, choose semantic locators, scaffold the page object and the test, run a focused check, and self-review.</li>
+                    <li>Cursor, Claude Code, and LLMs for writing and refactoring automation. AI code-review rounds run before merge.</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <article class="card project reveal" data-category="engineering">
+              <div class="project-art art-mobile" aria-hidden="true">
+                <div class="art-label">05 / MOBILE + PLATFORM QA</div>
+                <div class="phone"><i></i><i></i><i></i><i></i></div>
+              </div>
+              <div class="project-copy">
+                <div class="project-meta"><span>CLIENT / SERVER</span><span aria-hidden="true">↗ 05</span></div>
+                <h3>Mobile reliability</h3>
+                <p>Leading iOS, Android, web, and BI delivery QA, with mobile automation and cross-system diagnostics.</p>
+                <ul class="tags"><li class="tag">Appium</li><li class="tag">Selenium</li><li class="tag">BrowserStack</li><li class="tag">Android Studio</li><li class="tag">Firebase</li></ul>
+                <button class="project-link" type="button" aria-haspopup="dialog">Explore approach <span aria-hidden="true">↗</span></button>
+                <div class="project-detail" hidden>
+                  <p>Quality work across the boundary between devices, apps, services, and infrastructure.</p>
+                  <ul>
+                    <li>Web and mobile automation infrastructure built from scratch with Selenium, Appium, Jenkins, and BrowserStack.</li>
+                    <li>iOS and Android behaviour investigated with Android Studio, Firebase, and network tools.</li>
+                    <li>Integrations, digital payments, A/B experiments, and client–server flows tested end to end.</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <article class="card project reveal" data-category="engineering">
+              <div class="project-art art-quality" aria-hidden="true">
+                <div class="art-label">06 / CI + DIAGNOSTICS</div>
+                <div class="chart-art"><i style="height:39%"></i><i style="height:60%"></i><i style="height:51%"></i><i style="height:73%"></i><i style="height:64%"></i><i style="height:89%"></i><i style="height:100%"></i></div>
+              </div>
+              <div class="project-copy">
+                <div class="project-meta"><span>CI / DIAGNOSTICS</span><span aria-hidden="true">↗ 06</span></div>
+                <h3>Engineering for confidence</h3>
+                <p>CI pipelines, cloud services, databases, and observability tooling that make quality measurable and actionable.</p>
+                <ul class="tags"><li class="tag">GitLab CI</li><li class="tag">Jenkins</li><li class="tag">AWS</li><li class="tag">Coralogix</li><li class="tag">Kibana</li></ul>
+                <button class="project-link" type="button" aria-haspopup="dialog">Explore approach <span aria-hidden="true">↗</span></button>
+                <div class="project-detail" hidden>
+                  <p>Quality depends on clear signals, effective debugging, and pipelines that take turns when they share data.</p>
+                  <ul>
+                    <li>GitLab CI child pipelines on Kubernetes runners, with post-deploy, nightly, and manual runs. Resource groups serialize jobs that share test data.</li>
+                    <li>Backend workflows debugged with AWS DynamoDB and Cognito, Postman, and Charles Proxy.</li>
+                    <li>Incidents traced through Coralogix and Kibana, and data checked with MongoDB, PL/SQL, and Redshift.</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+          </div>
+          <p class="note">* Capability showcases from professional work, described without employer or product names. Card art and the hero terminal are illustrative; the sample suite further down is real, public code.</p>
+        </div>
+      </section>
+
+      <section class="section container" id="demo" aria-labelledby="demo-heading">
+        <div class="section-top reveal">
+          <div>
+            <p class="eyebrow">03 / The showreel</p>
+            <h2 id="demo-heading">Ninety seconds<br><span class="accent">of the work.</span></h2>
+          </div>
+          <p class="section-intro">The live portion is the public practice shop at <a href="https://practicesoftwaretesting.com/">practicesoftwaretesting.com</a>, which uses synthetic catalog data. It is not a work system.</p>
+        </div>
+        <div class="reel">
+          <figure class="card player reveal">
+            <div class="stage">
+              <video id="demo-video" controls preload="metadata" poster="assets/poster.jpg" aria-label="90 second showreel">
+                <source src="assets/demo.mp4" type="video/mp4">
+                <source src="assets/demo.webm" type="video/webm">
+                <track kind="captions" src="assets/captions.vtt" srclang="en" label="English" default>
+              </video>
+              <div class="hud" role="group" aria-label="Playback">
+                <button type="button" id="play-toggle">Play</button>
+                <p class="time" id="time-readout">0:00 / 1:30</p>
+                <label class="seek">
+                  <span class="visually-hidden">Seek</span>
+                  <input id="seek" type="range" min="0" max="90" value="0" step="0.1">
+                </label>
+                <button type="button" id="caption-toggle" aria-pressed="true">CC</button>
+                <button type="button" id="full-toggle" aria-label="Full screen">⛶</button>
+              </div>
+            </div>
+            <figcaption>90-second cut. Chapters follow the narration. English captions are on the track.</figcaption>
+            <p id="video-status" class="video-status" hidden>The video file did not load. The chapters and the transcript follow the 90-second narration.</p>
+          </figure>
+          <nav class="card chapters reveal" aria-label="Showreel chapters">
+            <p class="eyebrow">Chapters</p>
             <ol>
               <li><button type="button" data-start="0"><span>0:00–0:06</span> Intro</button></li>
               <li><button type="button" data-start="6"><span>0:06–0:20</span> Experience</button></li>
@@ -127,248 +410,259 @@
               <li><button type="button" data-start="88"><span>1:28–1:30</span> End card</button></li>
             </ol>
           </nav>
-          <figcaption>90-second cut. Chapters follow the narration. English captions are on the track.</figcaption>
-        </figure>
-        <p id="video-status" class="video-status" hidden>The video file is not in this build yet. The chapters and the transcript below follow the 90-second narration.</p>
-        <details>
-          <summary>Full transcript</summary>
-          <div class="transcript">
-            <h3>Intro, 0:00</h3>
-            <p>I am Beni Kun. Here is the work.</p>
-            <h3>Experience, 0:06</h3>
-            <p>The focus is end-to-end automation, reporting, and CI for a multi-region SaaS platform. I keep the checks, the reports, and the pipeline in one system. That is the current role.</p>
-            <h3>Tools, 0:20</h3>
-            <p>The core is Python 3.13, pytest, and Playwright. I also use xdist, JUnit, GitLab CI, Kubernetes, S3, CloudFront, and Slack.</p>
-            <h3>Automation dashboard, 0:32</h3>
-            <p>JUnit XML becomes a per-run HTML report. Publishing goes through S3 behind CloudFront. Slack carries the link. The dashboard keeps pass rate, a daily timeline, an environment matrix, and a flaky list. Flaky versus broken comes from run history. Numbers shown are sample data.</p>
-            <h3>Parallel-safe framework, 0:52</h3>
-            <p>A test calls a page wrapper, then Playwright. Workers share one logged-in session under a file lock. A scarce test-data pool is allocated and released under a lock. Logs, artifacts, and teardown stay on the test.</p>
-            <h3>Live run, 1:06</h3>
-            <p>A headed run on the public practice shop. Search, then filter, add to cart. The public sample passed.</p>
-            <h3>AI-assisted authoring and CI, 1:16</h3>
-            <p>With Chrome DevTools MCP I inspect, choose locators, scaffold the test, run a check, and self-review. Sanity jobs keep artifacts.</p>
-            <h3>Also shipped, 1:26</h3>
-            <p>Appeals, driver client, flakes, this pipeline.</p>
-            <h3>End card, 1:28</h3>
+        </div>
+        <div class="reel-notes">
+          <details class="card">
+            <summary>Full transcript</summary>
+            <div class="transcript">
+              <h3>Intro, 0:00</h3>
+              <p>I am Beni Kun. Here is the work.</p>
+              <h3>Experience, 0:06</h3>
+              <p>The focus is end-to-end automation, reporting, and CI for a multi-region SaaS platform. I keep the checks, the reports, and the pipeline in one system. That is the current role.</p>
+              <h3>Tools, 0:20</h3>
+              <p>The core is Python 3.13, pytest, and Playwright. I also use xdist, JUnit, GitLab CI, Kubernetes, S3, CloudFront, and Slack.</p>
+              <h3>Automation dashboard, 0:32</h3>
+              <p>JUnit XML becomes a per-run HTML report. Publishing goes through S3 behind CloudFront. Slack carries the link. The dashboard keeps pass rate, a daily timeline, an environment matrix, and a flaky list. Flaky versus broken comes from run history. Numbers shown are sample data.</p>
+              <h3>Parallel-safe framework, 0:52</h3>
+              <p>A test calls a page wrapper, then Playwright. Workers share one logged-in session under a file lock. A scarce test-data pool is allocated and released under a lock. Logs, artifacts, and teardown stay on the test.</p>
+              <h3>Live run, 1:06</h3>
+              <p>A headed run on the public practice shop. Search, then filter, add to cart. The public sample passed.</p>
+              <h3>AI-assisted authoring and CI, 1:16</h3>
+              <p>With Chrome DevTools MCP I inspect, choose locators, scaffold the test, run a check, and self-review. Sanity jobs keep artifacts.</p>
+              <h3>Also shipped, 1:26</h3>
+              <p>Appeals, driver client, flakes, this pipeline.</p>
+              <h3>End card, 1:28</h3>
+            </div>
+          </details>
+          <div class="card behind">
+            <p class="eyebrow">Behind the video</p>
+            <p>An animated HTML and CSS storyboard. Frames are captured with Playwright and Chromium, encoded with ffmpeg in H.264, and narrated with edge-tts text-to-speech.</p>
+            <p>The player loads <code>assets/demo.mp4</code> and <code>assets/demo.webm</code> from this site. The dashboard in the reel uses seeded sample data.</p>
           </div>
-        </details>
-      </section>
-
-      <section id="work" aria-labelledby="work-heading">
-        <h2 id="work-heading">What I did and how</h2>
-        <div class="cards">
-          <article class="card">
-            <h3>End-to-end framework</h3>
-            <dl>
-              <dt>Problem</dt>
-              <dd>A multi-region SaaS platform needed end-to-end checks a reviewer could follow without reading the automation API.</dd>
-              <dt>What I built</dt>
-              <dd>A Python 3.13 suite on pytest and Playwright sync, with a base page class and one wrapper per page, dialog, or wizard. Tests read like manual steps, and Playwright types stay out of them.</dd>
-              <dt>How</dt>
-              <dd>Logs are nested per phase and per step. Each test stores its own logs, screenshots, and network log. Size today: <span class="placeholder">{{N_TESTS}}</span> tests in <span class="placeholder">{{N_MODULES}}</span> modules, with <span class="placeholder">{{N_PAGE_OBJECTS}}</span> page objects.</dd>
-              <dt>Impact</dt>
-              <dd>A failure points at the step and the artifact for that test, so the suite can grow without becoming opaque.</dd>
-            </dl>
-          </article>
-          <article class="card">
-            <h3>Parallel-safe runs</h3>
-            <dl>
-              <dt>Problem</dt>
-              <dd>Workers that run together still share one login, and SMS-capable phone numbers are too scarce to hand out twice.</dd>
-              <dt>What I built</dt>
-              <dd>pytest-xdist workers share one logged-in session. The phone-number pool is taken and released under file locks with timeouts, and each run uses unique data.</dd>
-              <dt>How</dt>
-              <dd>Fixtures tear the data down. Login uses TOTP-based MFA. API clients create the test data and check the responses.</dd>
-              <dt>Impact</dt>
-              <dd>Parallel runs do not take the same phone number, and they do not leave that data behind for the next run.</dd>
-            </dl>
-          </article>
-          <article class="card">
-            <h3>Reporting</h3>
-            <dl>
-              <dt>Problem</dt>
-              <dd>A job log does not show whether the suite is improving, or whether a failure is flaky.</dd>
-              <dt>What I built</dt>
-              <dd>JUnit XML goes to a per-run HTML report and then to a cumulative dashboard: pass-rate trend, daily pass-rate chart, run-history matrix, and flaky versus real failures.</dd>
-              <dt>How</dt>
-              <dd>The dashboard is published to S3 behind CloudFront. Slack notifications carry a direct link to the run.</dd>
-              <dt>Impact</dt>
-              <dd>A lead can open the run, see the trend, and tell a flake from a real failure without asking for a pasted log.</dd>
-            </dl>
-          </article>
-          <article class="card">
-            <h3>CI for the suite</h3>
-            <dl>
-              <dt>Problem</dt>
-              <dd>Post-deploy, nightly, and manual runs share test data, so the jobs have to take turns.</dd>
-              <dt>What I built</dt>
-              <dd>GitLab CI child pipelines on Kubernetes runners, with post-deploy and nightly runs plus manual jobs.</dd>
-              <dt>How</dt>
-              <dd>Resource groups serialize the jobs that share test data, and artifacts are retained. I also fixed a log flood in an after-script.</dd>
-              <dt>Impact</dt>
-              <dd>Shared-data jobs wait their turn, and the after-script no longer buries the job log.</dd>
-            </dl>
-          </article>
-          <article class="card">
-            <h3>Flaky tests</h3>
-            <dl>
-              <dt>Problem</dt>
-              <dd>Suspend and unsuspend, and application scanning, failed on and off. Filter changes and two UI versions made the same failures worse.</dd>
-              <dt>What I built</dt>
-              <dd>Locators that work on the old and the new UI, and backward-compatible checks for filters that changed.</dd>
-              <dt>How</dt>
-              <dd>A step waits until the screen shows the state it needs, instead of sleeping for a fixed time.</dd>
-              <dt>Impact</dt>
-              <dd>Those flows stop failing only because the screen was mid-update or the locator assumed the other UI version.</dd>
-            </dl>
-          </article>
-          <article class="card">
-            <h3>AI-assisted QA</h3>
-            <dl>
-              <dt>Problem</dt>
-              <dd>Drafting a page object from memory was slow, and a locator could miss the UI that was actually on screen.</dd>
-              <dt>What I built</dt>
-              <dd>Reusable agent skills that inspect the live UI through Chrome DevTools MCP, choose semantic locators, scaffold the page object and the test, run a focused check, and self-review against team standards.</dd>
-              <dt>How</dt>
-              <dd>AI code-review rounds run before merge.</dd>
-              <dt>Impact</dt>
-              <dd>A new test is checked against the live UI and team standards before it is merged.</dd>
-            </dl>
-          </article>
         </div>
       </section>
 
-      <section id="principles" aria-labelledby="principles-heading">
-        <h2 id="principles-heading">How I work</h2>
-        <ol class="principles">
-          <li>
-            <h3>Tests read like the manual steps</h3>
-            <p>Playwright stays in the page objects. A reviewer should be able to follow the test the way they would follow a written case.</p>
+      <section class="section container" id="experience" aria-labelledby="experience-heading">
+        <div class="section-top reveal">
+          <div>
+            <p class="eyebrow">04 / Career timeline</p>
+            <h2 id="experience-heading">Built through<br><span class="accent">experience.</span></h2>
+          </div>
+          <p class="section-intro">From electrical systems and embedded hardware to mobility platforms and automation engineering.</p>
+        </div>
+        <ol class="timeline">
+          <li class="career reveal">
+            <div class="career-marker" aria-hidden="true"></div>
+            <article class="card career-card">
+              <div class="career-head">
+                <div>
+                  <h3 class="career-name">Mobility SaaS platform</h3>
+                  <p class="career-title">Senior QA &amp; Automation Engineer</p>
+                </div>
+                <p class="career-date">JUN 2024 — PRESENT</p>
+              </div>
+              <p>Full-stack Python, Playwright, and Pytest automation for a multi-region platform. I investigate APIs, mobile behaviour, and backend data on AWS (DynamoDB, Cognito) with Postman, Charles Proxy, and Android Studio. Cursor, Claude Code, and LLMs help me write and refactor tests, and Cursor MCP with Jira and Figma turns PRDs into STDs.</p>
+              <ul class="tags"><li class="tag">Playwright</li><li class="tag">Pytest</li><li class="tag">AWS</li><li class="tag">Cursor MCP</li></ul>
+            </article>
           </li>
-          <li>
-            <h3>Parallel runs get their own data</h3>
-            <p>One shared login is enough. Scarce phone numbers are locked, used once, and returned. Teardown puts the pool back.</p>
+          <li class="career reveal">
+            <div class="career-marker" aria-hidden="true"></div>
+            <article class="card career-card">
+              <div class="career-head">
+                <div>
+                  <h3 class="career-name">Urban mobility app</h3>
+                  <p class="career-title">Lead Delivery QA &amp; Senior QA Engineer</p>
+                </div>
+                <p class="career-date">AUG 2021 — JUN 2024</p>
+              </div>
+              <p>Led QA delivery for iOS, Android, web, and BI. Built web and mobile automation infrastructure from scratch with Selenium, Appium, Jenkins, and BrowserStack. Tested integrations, digital payments, A/B experiments, and client–server systems, using Firebase, Kibana, PL/SQL, Redshift, and MongoDB.</p>
+              <ul class="tags"><li class="tag">Selenium</li><li class="tag">Appium</li><li class="tag">Jenkins</li><li class="tag">BrowserStack</li></ul>
+            </article>
           </li>
-          <li>
-            <h3>A failure keeps its evidence</h3>
-            <p>Logs, screenshots, and the network log stay with the test. The dashboard separates flakes from real failures.</p>
+          <li class="career reveal">
+            <div class="career-marker" aria-hidden="true"></div>
+            <article class="card career-card">
+              <div class="career-head">
+                <div>
+                  <h3 class="career-name">Embedded systems, QA consultancy</h3>
+                  <p class="career-title">Embedded QA Engineer</p>
+                </div>
+                <p class="career-date">FEB 2020 — AUG 2021</p>
+              </div>
+              <p>Set up the manual QA process for a multidisciplinary embedded product, across hardware and software. Wrote the STP, STD, and STR documents and managed testing in Jira with Xray.</p>
+              <ul class="tags"><li class="tag">Embedded</li><li class="tag">Jira</li><li class="tag">Xray</li></ul>
+            </article>
           </li>
-          <li>
-            <h3>Wait for the screen, not the clock</h3>
-            <p>Readiness comes from visible UI state. Locators work on the old and the new UI, including filters that changed.</p>
+          <li class="career reveal">
+            <div class="career-marker" aria-hidden="true"></div>
+            <article class="card career-card">
+              <div class="career-head">
+                <div>
+                  <h3 class="career-name">Industrial digital printing</h3>
+                  <p class="career-title">QA Test Leader</p>
+                </div>
+                <p class="career-date">JUN 2018 — FEB 2020</p>
+              </div>
+              <p>Led software and system-level testing for digital printing machines: test plans in Azure Test Plans (TFS) and MTM, field-issue investigation, and release testing.</p>
+              <ul class="tags"><li class="tag">Azure Test Plans</li><li class="tag">MTM</li><li class="tag">System testing</li></ul>
+            </article>
           </li>
-          <li>
-            <h3>A draft is not a merge</h3>
-            <p>An agent can scaffold a test from the live UI. Review against team standards still happens before merge.</p>
+          <li class="career reveal">
+            <div class="career-marker" aria-hidden="true"></div>
+            <article class="card career-card">
+              <div class="career-head">
+                <div>
+                  <h3 class="career-name">Telecom provider</h3>
+                  <p class="career-title">Computer Operator &amp; QA</p>
+                </div>
+                <p class="career-date">JAN 2017 — JUN 2018</p>
+              </div>
+              <p>Monitored system operations and tested web and mobile interfaces. This is where troubleshooting and QA became the job.</p>
+            </article>
+          </li>
+          <li class="career reveal">
+            <div class="career-marker" aria-hidden="true"></div>
+            <article class="card career-card">
+              <div class="career-head">
+                <div>
+                  <h3 class="career-name">Military service</h3>
+                  <p class="career-title">Electrical Team Leader</p>
+                </div>
+                <p class="career-date">SEP 2008 — DEC 2016</p>
+              </div>
+              <p>Electrical team member from 2008, then electrical team leader from 2011 to 2016.</p>
+            </article>
           </li>
         </ol>
       </section>
 
-      <section id="stack" aria-labelledby="stack-heading">
-        <h2 id="stack-heading">Stack</h2>
-        <div class="stack">
-          <section>
-            <h3>Testing</h3>
+      <section class="section container" id="stack" aria-labelledby="stack-heading">
+        <div class="section-top reveal">
+          <div>
+            <p class="eyebrow">05 / Tools of the trade</p>
+            <h2 id="stack-heading">The toolkit<span class="accent">.</span></h2>
+          </div>
+          <p class="section-intro">What I use to ship confidence, understand failures, and make the next test smarter.</p>
+        </div>
+        <ul class="stack-grid">
+          <li class="card stack-card reveal"><div class="stack-emoji" aria-hidden="true">🐍</div><strong>Python</strong><small>Python 3.13 · pydantic · Faker</small></li>
+          <li class="card stack-card reveal"><div class="stack-emoji" aria-hidden="true">🎭</div><strong>Playwright</strong><small>UI and API automation</small></li>
+          <li class="card stack-card reveal"><div class="stack-emoji" aria-hidden="true">🧪</div><strong>Pytest</strong><small>pytest-xdist · JUnit XML · Allure</small></li>
+          <li class="card stack-card reveal"><div class="stack-emoji" aria-hidden="true">📱</div><strong>Mobile &amp; web</strong><small>Appium · Selenium · BrowserStack</small></li>
+          <li class="card stack-card reveal"><div class="stack-emoji" aria-hidden="true">☁️</div><strong>AWS</strong><small>DynamoDB · Cognito · S3 · CloudFront</small></li>
+          <li class="card stack-card reveal"><div class="stack-emoji" aria-hidden="true">🔁</div><strong>CI/CD</strong><small>GitLab CI · Jenkins · GitHub Actions · Kubernetes</small></li>
+          <li class="card stack-card reveal"><div class="stack-emoji" aria-hidden="true">🔍</div><strong>Observability</strong><small>Coralogix · Kibana · Firebase</small></li>
+          <li class="card stack-card reveal"><div class="stack-emoji" aria-hidden="true">✦</div><strong>AI tooling</strong><small>Cursor · Claude Code · Chrome DevTools MCP</small></li>
+          <li class="card stack-card reveal"><div class="stack-emoji" aria-hidden="true">🛰️</div><strong>API &amp; network</strong><small>Postman · Charles Proxy · Android Studio</small></li>
+          <li class="card stack-card reveal"><div class="stack-emoji" aria-hidden="true">🗄️</div><strong>Data</strong><small>MongoDB · PL/SQL · Redshift</small></li>
+          <li class="card stack-card reveal"><div class="stack-emoji" aria-hidden="true">📋</div><strong>Test management</strong><small>Jira · Xray · Azure Test Plans</small></li>
+          <li class="card stack-card reveal"><div class="stack-emoji" aria-hidden="true">🧰</div><strong>Tooling</strong><small>Ruff · mypy · uv · Slack API</small></li>
+        </ul>
+        <div class="credentials reveal">
+          <div class="education">
+            <p class="eyebrow">Education</p>
             <ul>
-              <li>Python 3.13</li>
-              <li>pytest</li>
-              <li>pydantic</li>
-              <li>Faker</li>
+              <li><div><h3>B.Sc. Computer Science</h3><p>Holon Institute of Technology</p></div><span>2016 — 2020</span></li>
+              <li><div><h3>Test automation</h3><p>Automation college course</p></div><span>JAN — OCT 2021</span></li>
+              <li><div><h3>Practical engineering: electrical, control, and energy</h3><p>Amal Holtz technological college</p></div><span>2006 — 2008</span></li>
             </ul>
-          </section>
-          <section>
-            <h3>Automation</h3>
-            <ul>
-              <li>Playwright</li>
-              <li>pytest-xdist</li>
-            </ul>
-          </section>
-          <section>
-            <h3>CI/CD</h3>
-            <ul>
-              <li>GitLab CI</li>
-              <li>GitHub Actions</li>
-              <li>Kubernetes</li>
-            </ul>
-          </section>
-          <section>
-            <h3>Reporting</h3>
-            <ul>
-              <li>JUnit XML</li>
-              <li>Allure</li>
-              <li>AWS S3</li>
-              <li>CloudFront</li>
-              <li>Slack API</li>
-            </ul>
-          </section>
-          <section>
-            <h3>AI-assisted QA</h3>
-            <ul>
-              <li>Chrome DevTools MCP</li>
-            </ul>
-          </section>
-          <section>
-            <h3>Tools</h3>
-            <ul>
-              <li>Ruff</li>
-              <li>mypy</li>
-              <li>uv</li>
-              <li>ffmpeg</li>
-              <li>edge-tts</li>
-            </ul>
-          </section>
+          </div>
+          <div class="extras">
+            <div>
+              <p class="eyebrow">Languages</p>
+              <ul class="tags"><li class="tag">Hebrew · native</li><li class="tag">Romanian · native</li><li class="tag">English · full professional</li></ul>
+            </div>
+            <div>
+              <p class="eyebrow">Certifications</p>
+              <ul class="tags"><li class="tag">Certified electrician</li><li class="tag">Java programming</li></ul>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section id="behind" aria-labelledby="behind-heading">
-        <h2 id="behind-heading">Behind the video</h2>
-        <p>The demo is an animated HTML and CSS storyboard. Frames are captured with Playwright and Chromium, then encoded with ffmpeg at 1920×1080 in H.264. Narration is text-to-speech from edge-tts.</p>
-        <p>I cut it from 15 seconds to 20 seconds. This page uses the 90-second cut. The player loads <code>assets/demo.mp4</code> and <code>assets/demo.webm</code> from this site.</p>
-      </section>
-
-      <section id="sample-suite" aria-labelledby="sample-heading">
-        <h2 id="sample-heading">Sample suite</h2>
-        <p>This is a small public stand-in for the same approach. It targets <a href="https://practicesoftwaretesting.com/">practicesoftwaretesting.com</a> only. The catalog there is synthetic.</p>
-        <p>Eight UI checks cover search, a category filter, price sort, a product page, cart math, sign-in, invoices (the shop’s order history), and an out-of-stock control. Three API checks validate product and category payloads with pydantic. Page objects use role-based locators. There are no fixed sleeps.</p>
-        <p>Sign-in uses the shop’s built-in customer account. Reports land in <code>sample-suite/reports/junit.xml</code> and <code>sample-suite/reports/report.html</code>.</p>
-        <pre><code>cd sample-suite
+      <section class="section container" id="sample-suite" aria-labelledby="sample-heading">
+        <div class="section-top reveal">
+          <div>
+            <p class="eyebrow">06 / Open source</p>
+            <h2 id="sample-heading">A public<br><span class="accent">sample suite.</span></h2>
+          </div>
+          <p class="section-intro">A small public stand-in for the same approach. It targets <a href="https://practicesoftwaretesting.com/">practicesoftwaretesting.com</a> only, and the catalog there is synthetic.</p>
+        </div>
+        <div class="suite">
+          <div class="card reveal">
+            <p>Eight UI checks cover search, a category filter, price sort, a product page, cart math, sign-in, invoices (the shop's order history), and an out-of-stock control. Three API checks validate product and category payloads with pydantic.</p>
+            <p>Page objects use role-based locators, and there are no fixed sleeps. Sign-in uses the shop's built-in customer account. Reports land in <code>reports/junit.xml</code> and <code>reports/report.html</code>.</p>
+            <p>The shop refuses headless Chromium, so the suite runs a headed browser. On Linux, wrap it in <code>xvfb-run</code>.</p>
+            <a class="button button-primary" href="https://github.com/benikun88/benikun88.github.io/tree/master/sample-suite">Sample suite on GitHub <span aria-hidden="true">↗</span></a>
+          </div>
+          <pre class="suite-terminal reveal"><code>cd sample-suite
 python3.13 -m venv .venv
 . .venv/bin/activate
 python -m pip install -r requirements.txt
 python -m playwright install chromium
-python -m pytest</code></pre>
-        <p>The shop refuses a headless Chromium. Run the command on a machine with a display, or use <code>xvfb-run -a python -m pytest</code> on Linux.</p>
-        <p><a href="https://github.com/benikun88/benikun88.github.io/tree/master/sample-suite">Sample suite on GitHub</a></p>
+xvfb-run -a python -m pytest</code></pre>
+        </div>
       </section>
 
-      <section id="hobbies" aria-labelledby="hobbies-heading">
-        <h2 id="hobbies-heading">Hobbies</h2>
-        <ul class="hobbies">
-          <li>
+      <section class="section container" id="hobbies" aria-labelledby="hobbies-heading">
+        <div class="section-top reveal">
+          <div>
+            <p class="eyebrow">07 / Off the clock</p>
+            <h2 id="hobbies-heading">Hobbies<span class="accent">.</span></h2>
+          </div>
+          <p class="section-intro">What I do when no suite is running.</p>
+        </div>
+        <ul class="hobby-grid">
+          <li class="card hobby marvel reveal">
+            <div class="hobby-icon" aria-hidden="true">🦸</div>
             <h3>Marvel</h3>
             <p>I read the comics, watch the movies, and follow the universe.</p>
           </li>
-          <li>
+          <li class="card hobby trading reveal">
+            <div class="candles" aria-hidden="true"><i style="height:40%"></i><i class="down" style="height:65%"></i><i style="height:55%"></i><i style="height:85%"></i><i class="down" style="height:50%"></i><i style="height:100%"></i></div>
+            <div class="hobby-icon" aria-hidden="true">📈</div>
             <h3>Technical trading</h3>
             <p>I follow the stock market and trade from the charts.</p>
           </li>
         </ul>
       </section>
 
-      <section id="contact" aria-labelledby="contact-heading">
-        <h2 id="contact-heading">Contact</h2>
-        <ul class="contact-list">
-          <li><a href="https://www.linkedin.com/in/benjamin-kun" rel="me">LinkedIn</a></li>
-          <li><a href="https://github.com/benikun88" rel="me">GitHub</a></li>
-          <li>Email <span class="placeholder">{{CONTACT_EMAIL}}</span></li>
-        </ul>
-        <p>A public email address is not listed on this page yet.</p>
+      <section class="cta container" id="contact" aria-labelledby="contact-heading">
+        <div class="cta-box reveal">
+          <p class="eyebrow">08 / Let's build something reliable</p>
+          <h2 id="contact-heading">Got a complex<br>problem? <span>I'm in.</span></h2>
+          <p>Great quality is a team sport. If you're building something ambitious, I'd like to connect and exchange ideas.</p>
+          <div class="hero-buttons">
+            <a class="button button-primary" href="mailto:benikun88@gmail.com?subject=Let's%20connect">Say hello <span aria-hidden="true">↗</span></a>
+            <a class="button button-secondary" href="https://www.linkedin.com/in/benjamin-kun" rel="me noopener" target="_blank">LinkedIn profile <span aria-hidden="true">↗</span></a>
+            <a class="button button-secondary" href="https://github.com/benikun88" rel="me noopener" target="_blank">GitHub profile <span aria-hidden="true">↗</span></a>
+          </div>
+          <p class="contact-line"><a href="mailto:benikun88@gmail.com">benikun88@gmail.com</a> · Center District, Israel</p>
+        </div>
       </section>
     </main>
+
+    <div class="container">
+      <footer class="footer">
+        <p>© <span id="year">2026</span> BENJAMIN KUN · QUALITY IS NOT AN ACCIDENT <span aria-hidden="true">✳</span></p>
+        <div class="footer-links">
+          <a href="#top">BACK TO TOP <span aria-hidden="true">↑</span></a>
+          <a href="https://github.com/benikun88" rel="me noopener" target="_blank">GITHUB <span aria-hidden="true">↗</span></a>
+          <a href="mailto:benikun88@gmail.com">EMAIL <span aria-hidden="true">↗</span></a>
+        </div>
+      </footer>
     </div>
-    <footer class="site-footer">
-      <p>Benjamin Kun. QA automation engineer.</p>
-    </footer>
+
+    <div class="modal-backdrop" id="modal-backdrop">
+      <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <button class="icon-button modal-close" type="button" id="modal-close" aria-label="Close dialog"><span aria-hidden="true">✕</span></button>
+        <p class="eyebrow">A closer look</p>
+        <h3 id="modal-title"></h3>
+        <div id="modal-body"></div>
+        <a class="button button-primary" href="mailto:benikun88@gmail.com?subject=Let's%20talk%20quality">Let's talk about it <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>
