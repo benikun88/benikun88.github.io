@@ -44,13 +44,15 @@ def test_video_player_shell(site):
     track = video.locator("track")
     expect(track).to_have_attribute("src", "assets/captions.vtt")
     expect(track).to_have_attribute("kind", "captions")
-    expect(site.get_by_role("button", name="0:00–0:10 Problem")).to_have_attribute("data-start", "0")
-    expect(site.get_by_role("button", name="0:10–0:22 Live run")).to_have_attribute("data-start", "10")
-    expect(site.get_by_role("button", name="0:22–0:36 Reports")).to_have_attribute("data-start", "22")
-    expect(site.get_by_role("button", name="0:36–0:48 CI")).to_have_attribute("data-start", "36")
-    expect(site.get_by_role("button", name="0:48–1:00 AI-assisted QA")).to_have_attribute(
-        "data-start", "48"
-    )
+    expect(site.get_by_role("button", name="0:00–0:06 Intro")).to_have_attribute("data-start", "0")
+    expect(site.get_by_role("button", name="0:06–0:20 Experience")).to_have_attribute("data-start", "6")
+    expect(site.get_by_role("button", name="0:20–0:32 Tools")).to_have_attribute("data-start", "20")
+    expect(site.get_by_role("button", name="0:32–0:52 Automation dashboard")).to_have_attribute("data-start", "32")
+    expect(site.get_by_role("button", name="0:52–1:06 Parallel-safe framework")).to_have_attribute("data-start", "52")
+    expect(site.get_by_role("button", name="1:06–1:16 Live run")).to_have_attribute("data-start", "66")
+    expect(site.get_by_role("button", name="1:16–1:26 AI-assisted authoring and CI")).to_have_attribute("data-start", "76")
+    expect(site.get_by_role("button", name="1:26–1:28 Also shipped")).to_have_attribute("data-start", "86")
+    expect(site.get_by_role("button", name="1:28–1:30 End card")).to_have_attribute("data-start", "88")
     expect(site.get_by_text("Full transcript")).to_be_visible()
 
 
@@ -95,7 +97,7 @@ def test_mobile_hero_stays_visible(page, site_url):
     page.set_viewport_size({"width": 390, "height": 844})
     page.goto(site_url + "/")
     expect(page.get_by_role("heading", level=1)).to_be_visible()
-    expect(page.get_by_role("link", name="Watch demo (60 s)")).to_be_visible()
+    expect(page.get_by_role("link", name="Watch demo (90 s)")).to_be_visible()
     expect(page.get_by_role("link", name="Sample suite").first).to_be_visible()
 
 
