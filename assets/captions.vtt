@@ -1,93 +1,121 @@
 WEBVTT
 
 NOTE
-English narration for the portfolio demo. Timed to the rendered voice.
+English narration for the career showreel.
 
 1
-00:00:00.370 --> 00:00:02.481
-End-to-end checks fail quietly.
+00:00:00.250 --> 00:00:01.497
+I am Beni Kun.
 
 2
-00:00:02.481 --> 00:00:03.953
-A page is not ready.
+00:00:01.502 --> 00:00:02.674
+Here is the work.
 
 3
-00:00:03.953 --> 00:00:06.075
-Two workers share one account.
+00:00:06.250 --> 00:00:11.808
+The focus is end-to-end automation,
+reporting, and CI for a multi-region SaaS
 
 4
-00:00:06.075 --> 00:00:08.224
-The report never leaves the runner.
+00:00:11.808 --> 00:00:12.458
+platform.
 
 5
-00:00:10.370 --> 00:00:13.406
-A headed Playwright run on the public
-practice shop.
+00:00:12.463 --> 00:00:16.651
+I keep the checks, the reports, and the
+pipeline in one system.
 
 6
-00:00:13.406 --> 00:00:17.885
-Page objects open a product, add it to the
-cart, and read the total.
+00:00:16.656 --> 00:00:18.126
+That is the current role.
 
 7
-00:00:17.885 --> 00:00:19.630
-The data is synthetic.
+00:00:20.248 --> 00:00:24.575
+The core is Python 3.13, pytest, and
+Playwright.
 
 8
-00:00:22.370 --> 00:00:24.221
-Pytest writes JUnit.
+00:00:24.580 --> 00:00:31.796
+I also use xdist, JUnit, GitLab CI,
+Kubernetes, S3, CloudFront, and Slack.
 
 9
-00:00:24.221 --> 00:00:27.333
-The report turns that file into HTML.
+00:00:32.249 --> 00:00:36.015
+JUnit XML becomes a per-run HTML report.
 
 10
-00:00:27.333 --> 00:00:29.234
-A dashboard lists the run.
+00:00:36.020 --> 00:00:39.023
+Publishing goes through S3 behind
+CloudFront.
 
 11
-00:00:29.234 --> 00:00:33.922
-The framework publishes that HTML through
-S3 and CloudFront.
+00:00:39.028 --> 00:00:40.584
+Slack carries the link.
 
 12
-00:00:33.922 --> 00:00:35.341
-Slack gets the link.
+00:00:40.589 --> 00:00:46.159
+The dashboard keeps pass rate, a daily
+timeline, an environment matrix, and a
 
 13
-00:00:36.369 --> 00:00:38.622
-GitLab CI on Kubernetes.
+00:00:46.159 --> 00:00:46.955
+flaky list.
 
 14
-00:00:38.622 --> 00:00:40.405
-Post-deploy and nightly.
+00:00:46.960 --> 00:00:49.988
+Flaky versus broken comes from run
+history.
 
 15
-00:00:40.405 --> 00:00:42.214
-pytest-xdist in parallel.
+00:00:49.993 --> 00:00:51.783
+Numbers shown are sample data.
 
 16
-00:00:42.214 --> 00:00:43.909
-Scarce accounts stay locked.
+00:00:52.248 --> 00:00:54.944
+A test calls a page wrapper, then
+Playwright.
 
 17
-00:00:43.909 --> 00:00:45.819
-Login uses TOTP.
+00:00:54.949 --> 00:00:58.325
+Workers share one logged-in session under
+a file lock.
 
 18
-00:00:45.819 --> 00:00:47.640
-API clients do setup.
+00:00:58.330 --> 00:01:02.226
+A scarce test-data pool is allocated and
+released under a lock.
 
 19
-00:00:48.370 --> 00:00:52.096
-I use Chrome DevTools MCP skills while I
-write the check.
+00:01:02.231 --> 00:01:05.785
+Logs, artifacts, and teardown stay on the
+test.
 
 20
-00:00:52.096 --> 00:00:54.830
-The test waits until the UI is visible.
+00:01:06.250 --> 00:01:08.721
+A headed run on the public practice shop.
 
 21
-00:00:54.830 --> 00:00:59.427
-Playwright frames, ffmpeg, and edge-tts
-finish the cut.
+00:01:08.726 --> 00:01:11.468
+Search, then filter, add to cart.
+
+22
+00:01:11.473 --> 00:01:13.192
+The public sample passed.
+
+23
+00:01:16.249 --> 00:01:22.468
+With Chrome DevTools MCP I inspect, choose
+locators, scaffold the test, run a check,
+
+24
+00:01:22.468 --> 00:01:23.652
+and self-review.
+
+25
+00:01:23.657 --> 00:01:25.790
+Sanity jobs keep artifacts.
+
+26
+00:01:26.248 --> 00:01:29.797
+Appeals, driver client, flakes, this
+pipeline.

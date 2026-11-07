@@ -2,42 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Demo storyboard — Benjamin Kun</title>
+  <title>Career showreel storyboard — Benjamin Kun</title>
   <style>
-    :root { color-scheme: light; }
-    body {
-      margin: 0;
-      background: #f6f3ed;
-      color: #1c1915;
-      font: 18px/1.5 Georgia, "Iowan Old Style", serif;
-    }
-    main { max-width: 820px; margin: 0 auto; padding: 48px 24px 80px; }
-    h1 { font-family: "Inter", "Segoe UI", sans-serif; font-size: 40px; line-height: 1.1; letter-spacing: -0.03em; margin: 0 0 8px; }
-    h2 { font-family: "Inter", "Segoe UI", sans-serif; font-size: 26px; margin: 40px 0 8px; letter-spacing: -0.02em; }
-    h3 { font-family: "Inter", "Segoe UI", sans-serif; font-size: 20px; margin: 28px 0 6px; }
-    p, li { margin: 0 0 10px; }
-    .lede { font-size: 20px; color: #3d3832; }
-    code, .mono { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 0.92em; }
-    pre {
-      background: #1c1915;
-      color: #f4f1ea;
-      padding: 16px 18px;
-      border-radius: 12px;
-      overflow: auto;
-      font-family: "JetBrains Mono", ui-monospace, monospace;
-      font-size: 14px;
-      line-height: 1.45;
-    }
-    table { width: 100%; border-collapse: collapse; margin: 12px 0 20px; }
+    body { margin: 0; background: #f6f3ed; color: #1c1915; font: 18px/1.5 Georgia, serif; }
+    main { max-width: 840px; margin: 0 auto; padding: 48px 24px 80px; }
+    h1, h2, h3 { font-family: "Segoe UI", sans-serif; letter-spacing: -0.02em; }
+    h1 { font-size: 36px; margin: 0 0 8px; }
+    h2 { font-size: 24px; margin: 36px 0 8px; }
+    h3 { font-size: 18px; margin: 22px 0 6px; }
+    code, .mono { font-family: ui-monospace, monospace; font-size: 0.92em; }
+    pre { background: #1c1915; color: #f4f1ea; padding: 16px; border-radius: 12px; overflow: auto; font-family: ui-monospace, monospace; font-size: 14px; }
+    table { width: 100%; border-collapse: collapse; }
     th, td { text-align: left; vertical-align: top; padding: 8px 10px 8px 0; border-bottom: 1px solid #e0d8cc; }
-    th { font-family: "Inter", "Segoe UI", sans-serif; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: #6d675e; }
-    .review { background: #fff; border: 1px solid #e0d8cc; border-radius: 12px; padding: 16px 18px; }
+    th { font-family: "Segoe UI", sans-serif; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: #6d675e; }
+    .note { background: #fff; border: 1px solid #e0d8cc; border-radius: 12px; padding: 14px 16px; }
   </style>
 </head>
 <body>
 <main>
-  <h1>Demo storyboard</h1>
-  <p class="lede">Benjamin Kun · 60 second portfolio cut, plus a 20 second teaser. First person, factual, no metrics that were not produced by the public sample run.</p>
+  <h1>Career showreel storyboard</h1>
+  <p>Benjamin &quot;Beni&quot; Kun · Senior QA Automation Engineer · 90 seconds. Audience: hiring managers and QA leads. First person, factual.</p>
+  <p>There is no <span class="mono">cv/cv.yml</span> on this branch. After that check, scene 2 shows only the current role: <span class="mono">current role · Present</span>, with the focus line and no employer name and no start date.</p>
 
   <h2>Re-render</h2>
   <pre>uv venv --python 3.13 .venv
@@ -45,65 +30,54 @@ source .venv/bin/activate
 uv pip install -r video/requirements.txt
 python -m playwright install chromium
 python video/render.py</pre>
-  <p>The script starts xvfb itself when <span class="mono">DISPLAY</span> is unset. It needs network access for the practice shop and for the edge-tts voice. <span class="mono">python video/render.py --reuse-build</span> keeps an existing JUnit file and tour recording and still rebuilds the voice, frames, and encodes. <span class="mono">--preview-slides</span> writes stills only, with placeholder counts, and does not call the shop.</p>
-  <p>Title cards are headless screenshots of local HTML. The shop tour is headed Chromium. The page content, prices, and copy are the live site. Corner controls on the shop can remain visible.</p>
+  <p>The script starts xvfb when <span class="mono">DISPLAY</span> is unset. <span class="mono">--preview-slides</span> writes stills only. <span class="mono">--reuse-build</span> keeps an existing JUnit file and tour recording.</p>
+  <p>The 1920×1080 master is written to <span class="mono">/home/ubuntu/showreel-master.mp4</span> and is not part of the git repo. Web files are 1280×720 under <span class="mono">assets/</span>.</p>
 
-  <h2>Picture and sound</h2>
+  <h2>Scenes</h2>
   <table>
-    <tr><th>Output</th><th>What it is</th></tr>
-    <tr><td><span class="mono">assets/demo.mp4</span></td><td>60s, 1920×1080, 30 fps, H.264 yuv420p, CRF 26, AAC, faststart.</td></tr>
-    <tr><td><span class="mono">assets/demo.webm</span></td><td>Same cut, VP9 and Opus.</td></tr>
-    <tr><td><span class="mono">assets/poster.jpg</span></td><td>1920×1080 identity still for the player.</td></tr>
-    <tr><td><span class="mono">assets/captions.vtt</span></td><td>English cues timed to the main narration.</td></tr>
-    <tr><td><span class="mono">assets/og-card.png</span></td><td>1200×630 type card. No shop pixels.</td></tr>
-    <tr><td><span class="mono">assets/teaser.mp4</span></td><td>20s cut with burned-in captions for a muted player.</td></tr>
-    <tr><td><span class="mono">assets/teaser.vtt</span></td><td>Same teaser words, timed to that narration.</td></tr>
+    <tr><th>Time</th><th>Scene</th><th>On screen</th></tr>
+    <tr><td>0:00–0:06</td><td>Intro</td><td>Name, title, chips: Experience, Tools, Projects.</td></tr>
+    <tr><td>0:06–0:20</td><td>Experience</td><td>current role · Present. End-to-end automation, reporting, and CI for a multi-region SaaS platform.</td></tr>
+    <tr><td>0:20–0:32</td><td>Tools</td><td>16 text badges in four groups. No logos.</td></tr>
+    <tr><td>0:32–0:38</td><td>Dashboard pipeline</td><td>JUnit XML, per-run HTML, S3 behind CloudFront, cumulative dashboard, Slack message with report link. Corner label: Sample data.</td></tr>
+    <tr><td>0:38–0:52</td><td>Dashboard</td><td>Sample health, pass rate, sample quality gate, daily pass/fail/skip bars, test-by-environment day blocks, flaky list. Callout: Flaky vs. broken, classified from run history. Corner label: Sample data.</td></tr>
+    <tr><td>0:52–1:06</td><td>Framework</td><td>test, then page wrapper, then Playwright. Workers, one logged-in session, locked file. Scarce test-data pool allocated and released under a lock. Callouts: nested logs, per-test artifacts, teardown cleanup.</td></tr>
+    <tr><td>1:06–1:16</td><td>Live run</td><td>Headed Playwright only, on the public practice shop. Search, filter, add to cart. Result panel shows the public sample passed.</td></tr>
+    <tr><td>1:16–1:26</td><td>Authoring and CI</td><td>Five steps, then one CI line: sanity jobs on dev checkout, resource groups per shared pool, artifacts kept.</td></tr>
+    <tr><td>1:26–1:28</td><td>Also shipped</td><td>eligibility and appeals flow automation; driver API client; flaky-test stabilization; this video pipeline.</td></tr>
+    <tr><td>1:28–1:30</td><td>End card</td><td>Site URL, LinkedIn URL, QR code aimed at https://benikun88.github.io/.</td></tr>
   </table>
-  <p>Spoken words and measured cue times live in <span class="mono">video/narration.txt</span>. The voice is <span class="mono">en-US-AndrewNeural</span> at rate −4% through edge-tts. It is not a recording of Beni. If a chapter runs long, speech is sped by at most 6%, and the file notes the factor.</p>
 
-  <h2>Chapters</h2>
+  <h2>Narration</h2>
+  <p>Voice is en-US-AndrewNeural at rate −4%, edge-tts. Loudness is −16 LUFS. No music. Measured cue times are rewritten into <span class="mono">video/narration.txt</span>. Captions are <span class="mono">assets/captions.vtt</span> and <span class="mono">assets/captions.srt</span>. Each cue is at most two lines and at most 17 characters per second.</p>
+  <ol>
+    <li>I am Beni Kun. Here is the work.</li>
+    <li>The focus is end-to-end automation, reporting, and CI for a multi-region SaaS platform. I keep the checks, the reports, and the pipeline in one system. That is the current role.</li>
+    <li>The core is Python 3.13, pytest, and Playwright. I also use xdist, JUnit, GitLab CI, Kubernetes, S3, CloudFront, and Slack.</li>
+    <li>JUnit XML becomes a per-run HTML report. Publishing goes through S3 behind CloudFront. Slack carries the link. The dashboard keeps pass rate, a daily timeline, an environment matrix, and a flaky list. Flaky versus broken comes from run history. Numbers shown are sample data.</li>
+    <li>A test calls a page wrapper, then Playwright. Workers share one logged-in session under a file lock. A scarce test-data pool is allocated and released under a lock. Logs, artifacts, and teardown stay on the test.</li>
+    <li>A headed run on the public practice shop. Search, then filter, add to cart. The public sample passed.</li>
+    <li>With Chrome DevTools MCP I inspect, choose locators, scaffold the test, run a check, and self-review. Sanity jobs keep artifacts.</li>
+    <li>Appeals, driver client, flakes, this pipeline.</li>
+  </ol>
+  <p>The spoken close is shorter than the four on-screen lines. A twelve-word sentence does not fit in two seconds at a listenable pace, so the full phrases stay on the card and the voice names them in brief. That line is timed from 1:26 through the end card. The end card itself is visual: the URLs and the QR code.</p>
+  <p>The 30 second teaser is intro, the experience line, and a 10 second dashboard highlight. It is <span class="mono">assets/teaser.mp4</span>, with burned-in captions and <span class="mono">assets/teaser.vtt</span>.</p>
 
-  <h3>01 · The problem · 0:00–0:10</h3>
-  <p>End-to-end checks fail quietly. A page is not ready. Two workers share one account. The report never leaves the runner.</p>
-  <p>On screen, the whole time: “Keep the failures visible.” Python 3.13, pytest, Playwright, page objects. Each sentence highlights in turn. That headline is on screen and is not a separate spoken line.</p>
+  <h2>Sample dashboard</h2>
+  <p>Figures come from <span class="mono">video/sample_data.py</span> with seed 20261107. Test names are invented. The quality gate drawn on screen is a sample gate, not a measured production gate. The corner label is Sample data.</p>
 
-  <h3>02 · Live run · 0:10–0:22</h3>
-  <p>A headed Playwright run on the public practice shop. Page objects open a product, add it to the cart, and read the total. The data is synthetic.</p>
-  <p>Headed Chromium, 1920×1080, against only <span class="mono">https://practicesoftwaretesting.com/</span>. The same page objects as the sample tests: open the home page, open the first in-stock product, add it to the cart, open the cart, read the total. Pills say “Live run”, “Headed Playwright”, and “Public practice shop · synthetic data”. The whole recording is fit into 12 seconds, so it may play slightly faster than real time.</p>
-  <p>From this network, product photos return HTTP 403 when the page requests them as images, and HTTP 200 when the same public URL is opened directly. The tour downloads those files directly and gives the bytes back to the page. The shop UI, prices, and cart are not substituted.</p>
+  <h2>Live shop</h2>
+  <p>Recording is Playwright video of headed Chromium, not a desktop capture. The only site is https://practicesoftwaretesting.com/. The tour searches, filters by the Hand Tools label, and adds a product to the cart. Product photos that return HTTP 403 as embedded images are fetched with a direct GET of the same public URL, which returns the image bytes. Prices and controls are the live page.</p>
 
-  <h3>03 · Reports and dashboard · 0:22–0:36</h3>
-  <p>Pytest writes JUnit. The report turns that file into HTML. A dashboard lists the run. The framework publishes that HTML through S3 and CloudFront. Slack gets the link.</p>
-  <p>The tables and counts are the JUnit file from <span class="mono">video/public_sample/test_shop.py</span>, run headed, serial, on the public shop. The steps JUnit → HTML → S3 → CloudFront → Slack link are the framework path. The slide says this sample stayed on disk and was not uploaded. There is no trend and no second run.</p>
-
-  <h3>04 · CI pipeline · 0:36–0:48</h3>
-  <p>GitLab CI on Kubernetes. Post-deploy and nightly. pytest-xdist in parallel. Scarce accounts stay locked. Login uses TOTP. API clients do setup.</p>
-  <p>This frame is a diagram. It is not a screenshot of a private project. The caption says the public sample does not run a deploy, a lock, or TOTP. Nodes light up with the sentence that names them.</p>
-
-  <h3>05 · Authoring and outro · 0:48–1:00</h3>
-  <p>I use Chrome DevTools MCP skills while I write the check. The test waits until the UI is visible. Playwright frames, ffmpeg, and edge-tts finish the cut.</p>
-  <p>Left panel: host, role button, name “Add to cart”, state visible, test id <span class="mono">add-to-cart</span>. It is labeled as a structured read, not a browser screenshot. Right panel: <span class="mono">add_to_cart</span> from <span class="mono">video/public_sample/pages.py</span>, including <span class="mono">wait_for(state="visible")</span>. The last five seconds, at least, are the end card: Benjamin Kun, QA Engineer, end-to-end testing, benikun88.github.io, and the tool line.</p>
-
-  <h2>20 second teaser</h2>
-  <p>A headed Playwright run on the public practice shop. Page objects read the cart total. The report is JUnit, then HTML, then a dashboard.</p>
-  <p>Picture: title, the same shop recording, the dashboard counts, then the end card with the site URL. Captions are burned in because a muted player will not load the sidecar. <span class="mono">assets/teaser.vtt</span> matches the speech.</p>
-
-  <h2>Sample commands the render runs</h2>
-  <pre>python -m pytest video/public_sample/test_shop.py --junitxml video/build/junit.xml
-# headed Playwright tour of the practice shop, video saved under video/build/tour/
-ffmpeg -i video/build/picture -i narration.wav -c:v libx264 -pix_fmt yuv420p -crf 26 -r 30 -c:a aac -movflags +faststart assets/demo.mp4
-ffmpeg -i assets/demo.mp4 -c:v libvpx-vp9 -pix_fmt yuv420p -crf 34 -b:v 0 -c:a libopus assets/demo.webm</pre>
-  <p>The exact ffmpeg invocations are printed by <span class="mono">video/render.py</span> when it runs. Intermediates stay in <span class="mono">video/build/</span> and are gitignored. If <span class="mono">demo.mp4</span> ever exceeds 25 MB, the script stops and does not treat that file as shippable. The fallback would be an unlisted embed on youtube-nocookie.com, not a larger file in git.</p>
-
-  <h2>What Beni should review</h2>
-  <div class="review">
+  <h2>Review</h2>
+  <div class="note">
     <ul>
-      <li>The narration is written in your voice from the public description of the framework. Confirm each sentence is fair before this represents you.</li>
-      <li>The voice is synthetic (en-US-AndrewNeural). Listen to pytest-xdist, TOTP, MCP, ffmpeg, and edge-tts. Those names are easy for a voice to mis-say.</li>
-      <li>On-screen text is listed above. The report numbers change when the sample is re-run. The shop prices and product names are whatever the public catalog shows that day.</li>
-      <li>“QA Engineer” is the wording on the existing About page of this site.</li>
-      <li>S3, CloudFront, Slack, GitLab CI, Kubernetes, pytest-xdist, locked accounts, TOTP, and API clients are described as the framework. The recording does not show a private pipeline, a private dashboard, or a login.</li>
-      <li>The end card URL is https://benikun88.github.io. It is shown, not spoken.</li>
+      <li>The narration is written in your voice from the public-safe facts in the brief. Confirm each sentence before this represents you.</li>
+      <li>The voice is synthetic. Listen to pytest-xdist, TOTP is not spoken in this cut, and listen to MCP, ffmpeg, and edge-tts on the tools card.</li>
+      <li>Title on screen is Senior QA Automation Engineer, as specified for this cut.</li>
+      <li>No employer name and no start date. Earlier roles are not shown because there is no public-safe cv.yml.</li>
+      <li>Dashboard numbers are sample data. Do not describe them as production results.</li>
+      <li>The CI and authoring frames are diagrams, not screenshots of a private system.</li>
     </ul>
   </div>
 </main>

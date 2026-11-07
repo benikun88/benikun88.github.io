@@ -1,18 +1,35 @@
 WEBVTT
 
 NOTE
-English narration for the 20 second cut. Timed to the rendered voice.
+English narration for the 30 second cut.
 
 1
-00:00:00.370 --> 00:00:03.406
-A headed Playwright run on the public
-practice shop.
+00:00:00.250 --> 00:00:01.497
+I am Beni Kun.
 
 2
-00:00:03.406 --> 00:00:05.685
-Page objects read the cart total.
+00:00:01.502 --> 00:00:02.674
+Here is the work.
 
 3
-00:00:05.685 --> 00:00:10.060
-The report is JUnit, then HTML, then a
-dashboard.
+00:00:06.250 --> 00:00:11.808
+The focus is end-to-end automation,
+reporting, and CI for a multi-region SaaS
+
+4
+00:00:11.808 --> 00:00:12.458
+platform.
+
+5
+00:00:12.463 --> 00:00:16.656
+I keep the checks, the reports, and the
+pipeline in one system.
+
+6
+00:00:20.250 --> 00:00:25.013
+The dashboard keeps a pass rate, a daily
+timeline, and a flaky list.
+
+7
+00:00:25.018 --> 00:00:27.309
+Numbers on screen are sample data.

@@ -21,6 +21,22 @@ class Shop:
         self.page.goto(SHOP_URL, wait_until="domcontentloaded")
         self.page.get_by_test_id("product-name").first.wait_for(state="visible")
 
+    def search(self, term: str) -> None:
+        field = self.page.get_by_test_id("search-query")
+        field.wait_for(state="visible")
+        field.fill(term)
+        self.page.get_by_test_id("search-submit").click()
+        expect(self.page.get_by_test_id("product-name").first).to_contain_text(
+            term, ignore_case=True
+        )
+
+    def filter_category(self, name: str) -> None:
+        label = self.page.locator("label").filter(has_text=name).first
+        label.scroll_into_view_if_needed()
+        label.wait_for(state="visible")
+        label.click()
+        self.page.get_by_test_id("product-name").first.wait_for(state="visible")
+
     def open_first_in_stock_product(self) -> None:
         total = self.page.get_by_test_id("product-name").count()
         for index in range(total):
