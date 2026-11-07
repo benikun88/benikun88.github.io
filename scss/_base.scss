@@ -1,0 +1,122 @@
+@use "tokens" as *;
+
+:root {
+  @include theme($light);
+  color-scheme: light;
+  --sans: #{$sans};
+  --serif: #{$serif};
+  --mono: #{$mono};
+}
+
+[data-theme="dark"] {
+  @include theme($dark);
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--bg);
+  scroll-padding-top: 1.25rem;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: $step-0;
+  line-height: 1.55;
+}
+
+::selection {
+  background: var(--aqua);
+  color: var(--on-aqua);
+}
+
+:focus-visible {
+  @include focus-ring;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+a {
+  color: var(--aqua-ink);
+  text-underline-offset: 0.16em;
+}
+
+a:hover {
+  color: var(--ink);
+}
+
+.skip-link {
+  position: absolute;
+  left: 0.75rem;
+  top: -4rem;
+  z-index: 30;
+  background: var(--aqua);
+  color: var(--on-aqua);
+  padding: 0.65rem 0.9rem;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 0.75rem;
+}
+
+.progress {
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 3px;
+  z-index: 40;
+  background: var(--glow);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  pointer-events: none;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--serif);
+  font-weight: 560;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+h1 {
+  margin: 0;
+  max-width: 10ch;
+  font-size: $step-3;
+}
+
+h2 {
+  margin: 0 0 1rem;
+  font-size: $step-2;
+}
+
+h3 {
+  margin: 0 0 0.4rem;
+  font-size: $step-1;
+}
+
+p,
+dd,
+.lede {
+  max-width: 62ch;
+  overflow-wrap: break-word;
+}
