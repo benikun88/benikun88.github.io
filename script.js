@@ -167,16 +167,14 @@
   if (!toggle) return;
 
   function current() {
-    return document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
+    return document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
   }
 
   function paint(theme) {
     document.documentElement.setAttribute("data-theme", theme);
     var meta = document.querySelector('meta[name="theme-color"]');
-    if (meta) meta.setAttribute("content", theme === "dark" ? "#071416" : "#e7f5f3");
-    var dark = theme === "dark";
-    toggle.textContent = dark ? "Light mode" : "Dark mode";
-    toggle.setAttribute("aria-pressed", dark ? "true" : "false");
+    if (meta) meta.setAttribute("content", theme === "light" ? "#f4f5f1" : "#090b11");
+    toggle.setAttribute("aria-label", theme === "light" ? "Switch to dark mode" : "Switch to light mode");
   }
 
   paint(current());
@@ -192,28 +190,42 @@
 })();
 
 (function () {
-  var bar = document.getElementById("scroll-progress");
-  var label = document.getElementById("rail-section");
-  var links = Array.prototype.slice.call(document.querySelectorAll(".rail nav a"));
+  var button = document.getElementById("menu-toggle");
+  var nav = document.getElementById("nav-links");
+  if (!button || !nav) return;
+
+  function set(open) {
+    nav.classList.toggle("open", open);
+    button.setAttribute("aria-expanded", open ? "true" : "false");
+  }
+
+  button.addEventListener("click", function () {
+    set(!nav.classList.contains("open"));
+  });
+  nav.addEventListener("click", function (event) {
+    if (event.target.closest("a")) set(false);
+  });
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape" && nav.classList.contains("open")) {
+      set(false);
+      button.focus();
+    }
+  });
+})();
+
+(function () {
+  var links = Array.prototype.slice.call(document.querySelectorAll(".nav-links a"));
   var sections = links.map(function (link) {
     return document.getElementById(link.getAttribute("href").slice(1));
   }).filter(Boolean);
 
   function paint() {
-    var max = document.documentElement.scrollHeight - window.innerHeight;
-    var amount = max > 0 ? Math.min(1, window.scrollY / max) : 0;
-    if (bar) bar.style.transform = "scaleX(" + amount + ")";
-    var current = sections[0];
+    var current = null;
     sections.forEach(function (section) {
-      if (section.getBoundingClientRect().top <= 140) current = section;
+      if (section.getBoundingClientRect().top <= 160) current = section;
     });
-    if (!current) return;
-    if (label) {
-      var heading = current.querySelector("h2");
-      label.textContent = current.id === "top" ? "Intro" : (heading ? heading.textContent : current.id);
-    }
     links.forEach(function (link) {
-      if (link.getAttribute("href") === "#" + current.id) link.setAttribute("aria-current", "true");
+      if (current && link.getAttribute("href") === "#" + current.id) link.setAttribute("aria-current", "true");
       else link.removeAttribute("aria-current");
     });
   }
@@ -221,4 +233,100 @@
   paint();
   window.addEventListener("scroll", paint, { passive: true });
   window.addEventListener("resize", paint);
+})();
+
+(function () {
+  var filters = Array.prototype.slice.call(document.querySelectorAll(".filter"));
+  var cards = Array.prototype.slice.call(document.querySelectorAll(".project"));
+
+  filters.forEach(function (filter) {
+    filter.addEventListener("click", function () {
+      var wanted = filter.getAttribute("data-filter");
+      filters.forEach(function (other) {
+        other.setAttribute("aria-pressed", other === filter ? "true" : "false");
+      });
+      cards.forEach(function (card) {
+        var tags = (card.getAttribute("data-category") || "").split(" ");
+        card.hidden = !(wanted === "all" || tags.indexOf(wanted) !== -1);
+      });
+    });
+  });
+})();
+
+(function () {
+  var backdrop = document.getElementById("modal-backdrop");
+  var close = document.getElementById("modal-close");
+  var title = document.getElementById("modal-title");
+  var body = document.getElementById("modal-body");
+  if (!backdrop || !close || !title || !body) return;
+  var opener = null;
+
+  function shut() {
+    backdrop.classList.remove("open");
+    document.body.style.overflow = "";
+    if (opener) opener.focus();
+  }
+
+  Array.prototype.forEach.call(document.querySelectorAll(".project-link"), function (button) {
+    button.addEventListener("click", function () {
+      var card = button.closest(".project");
+      var detail = card.querySelector(".project-detail");
+      opener = button;
+      title.textContent = card.querySelector("h3").textContent;
+      body.replaceChildren();
+      Array.prototype.forEach.call(detail.children, function (node) {
+        body.appendChild(node.cloneNode(true));
+      });
+      backdrop.classList.add("open");
+      document.body.style.overflow = "hidden";
+      close.focus();
+    });
+  });
+
+  close.addEventListener("click", shut);
+  backdrop.addEventListener("click", function (event) {
+    if (event.target === backdrop) shut();
+  });
+  document.addEventListener("keydown", function (event) {
+    if (!backdrop.classList.contains("open")) return;
+    if (event.key === "Escape") {
+      shut();
+      return;
+    }
+    if (event.key !== "Tab") return;
+    var nodes = backdrop.querySelectorAll("a, button");
+    var first = nodes[0];
+    var last = nodes[nodes.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  });
+})();
+
+(function () {
+  var year = document.getElementById("year");
+  if (year) year.textContent = String(new Date().getFullYear());
+
+  var items = document.querySelectorAll(".reveal");
+  if (!("IntersectionObserver" in window)) {
+    Array.prototype.forEach.call(items, function (item) {
+      item.classList.add("visible");
+    });
+    return;
+  }
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.09 });
+  Array.prototype.forEach.call(items, function (item) {
+    observer.observe(item);
+  });
 })();

@@ -1,16 +1,42 @@
 @use "tokens" as *;
 
-:root {
-  @include theme($light);
-  color-scheme: light;
-  --sans: #{$sans};
-  --serif: #{$serif};
-  --mono: #{$mono};
+@font-face {
+  font-family: "DM Sans";
+  src: url("assets/fonts/dm-sans.woff2") format("woff2");
+  font-weight: 400 700;
+  font-display: swap;
 }
 
-[data-theme="dark"] {
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("assets/fonts/space-grotesk.woff2") format("woff2");
+  font-weight: 400 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DM Mono";
+  src: url("assets/fonts/dm-mono-400.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DM Mono";
+  src: url("assets/fonts/dm-mono-500.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
+
+:root {
   @include theme($dark);
+  --radius: #{$radius};
   color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  @include theme($light);
+  color-scheme: light;
 }
 
 *,
@@ -20,103 +46,254 @@
 }
 
 html {
-  background: var(--bg);
-  scroll-padding-top: 1.25rem;
+  scroll-behavior: smooth;
+  scroll-padding-top: 24px;
 }
 
 body {
   margin: 0;
   background: var(--bg);
   color: var(--ink);
-  font-family: var(--sans);
-  font-size: $step-0;
-  line-height: 1.55;
+  font-family: $body;
+  overflow-x: hidden;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+summary:focus-visible {
+  @include focus-ring;
 }
 
 ::selection {
-  background: var(--aqua);
-  color: var(--on-aqua);
+  background: var(--accent);
+  color: #111;
 }
 
-:focus-visible {
-  @include focus-ring;
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: $display;
+}
+
+code,
+pre {
+  font-family: $mono;
+}
+
+.container {
+  width: min(1230px, calc(100% - 80px));
+  margin-inline: auto;
+
+  @include below($bp-wide) {
+    width: min(100% - 48px, 1230px);
+  }
+
+  @include below($bp-phone) {
+    width: calc(100% - 36px);
+  }
+}
+
+.accent {
+  color: var(--accent-ink);
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.eyebrow {
+  @include mono(11px, 500);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent-ink);
+  margin: 0;
 }
 
 .visually-hidden {
   position: absolute;
   width: 1px;
   height: 1px;
-  padding: 0;
   margin: -1px;
+  padding: 0;
   overflow: hidden;
-  clip: rect(0, 0, 0, 0);
+  clip: rect(0 0 0 0);
   white-space: nowrap;
   border: 0;
 }
 
-a {
-  color: var(--aqua-ink);
-  text-underline-offset: 0.16em;
-}
-
-a:hover {
-  color: var(--ink);
-}
-
 .skip-link {
   position: absolute;
-  left: 0.75rem;
-  top: -4rem;
-  z-index: 30;
-  background: var(--aqua);
-  color: var(--on-aqua);
-  padding: 0.65rem 0.9rem;
-  text-decoration: none;
+  left: 16px;
+  top: -80px;
+  z-index: 100;
+  background: var(--accent);
+  color: var(--on-accent);
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-weight: 700;
+
+  &:focus {
+    top: 16px;
+  }
 }
 
-.skip-link:focus {
-  top: 0.75rem;
-}
-
-.progress {
-  position: fixed;
-  inset: 0 0 auto 0;
-  height: 3px;
-  z-index: 40;
-  background: var(--glow);
-  transform: scaleX(0);
-  transform-origin: 0 50%;
+.grain {
   pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  opacity: 0.045;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
 }
 
-h1,
-h2,
-h3 {
-  font-family: var(--serif);
-  font-weight: 560;
-  letter-spacing: -0.03em;
-  line-height: 1.05;
+.orb {
+  position: absolute;
+  pointer-events: none;
+  filter: blur(95px);
+  border-radius: 50%;
+  z-index: 0;
+  opacity: 0.22;
+
+  &.one {
+    width: 500px;
+    height: 500px;
+    background: #5c3dbe;
+    top: 40px;
+    right: -140px;
+  }
+
+  &.two {
+    width: 330px;
+    height: 330px;
+    background: #79b53a;
+    top: 430px;
+    left: -180px;
+    opacity: 0.11;
+  }
 }
 
-h1 {
-  margin: 0;
-  max-width: 10ch;
-  font-size: $step-3;
+:root[data-theme="light"] .orb {
+  opacity: 0.12;
 }
 
-h2 {
-  margin: 0 0 1rem;
-  font-size: $step-2;
+.js .reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.65s, transform 0.65s;
+
+  &.visible {
+    opacity: 1;
+    transform: none;
+  }
 }
 
-h3 {
-  margin: 0 0 0.4rem;
-  font-size: $step-1;
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 17px 22px;
+  border-radius: 13px;
+  font-size: 13px;
+  font-weight: 800;
+  transition: transform 0.22s, box-shadow 0.22s, border-color 0.22s;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-3px);
+  }
 }
 
-p,
-dd,
-.lede {
-  max-width: 62ch;
-  overflow-wrap: break-word;
+.button-primary {
+  background: var(--accent);
+  color: var(--on-accent);
+  border: 0;
+
+  &:hover {
+    box-shadow: 0 10px 30px rgba(198, 255, 100, 0.16);
+  }
+}
+
+.button-secondary {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+
+  &:hover {
+    border-color: var(--accent);
+  }
+}
+
+.icon-button {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  color: var(--ink);
+  background: var(--surface);
+  cursor: pointer;
+  font-size: 17px;
+  line-height: 1;
+}
+
+.tiny-pill,
+.tag {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--muted);
+  @include mono(10px);
+}
+
+.tiny-pill {
+  padding: 8px 11px;
+}
+
+.tag {
+  background: var(--surface2);
+  border-radius: 7px;
+  padding: 7px 9px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+  }
 }

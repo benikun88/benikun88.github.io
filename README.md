@@ -2,7 +2,7 @@
 
 Public portfolio for a QA automation engineer. HTML, Sass, and vanilla JS. Intended live URL: <https://benikun88.github.io/>.
 
-Styles live in `scss/` and compile to `styles.css`.
+Styles live in `scss/` and compile to `styles.css`. Dark is the default theme; the header button switches to light and remembers the choice. Fonts (DM Sans, DM Mono, Space Grotesk, SIL Open Font License) are self-hosted in `assets/fonts/`, so the page makes no third-party requests.
 
 ```bash
 npm install
@@ -31,7 +31,7 @@ python -m playwright install chromium
 python -m pytest tests
 ```
 
-The suite serves this folder on localhost and checks the hero, section headings, video player shell, poster, captions, profile links, and serious or critical axe violations.
+The suite serves this folder on localhost and checks the hero, section headings, video player shell, poster, captions, profile and email links, the theme toggle, showcase filters and dialog, the career timeline, the mobile menu, and serious or critical axe violations.
 
 ## Sample suite
 
@@ -63,14 +63,14 @@ CI uploads those files as the `sample-suite-report` artifact. They are not commi
 
 The player on the home page expects files in this repository:
 
-- `assets/demo.mp4` (H.264, 1920x1080, under 25 MB)
+- `assets/demo.mp4` (H.264, 1280x720 web cut)
 - `assets/demo.webm` (VP9)
 - `assets/poster.jpg`
 - `assets/captions.vtt`
 
-`poster.jpg` and `captions.vtt` are in the repo. `demo.mp4` and `demo.webm` are produced separately and are not part of this change. The chapter list and the transcript match the planned 60-second narration: problem (0:00), live run on the practice shop (0:10), reports (0:22), CI (0:36), AI-assisted QA and close (0:48).
+All four are in the repo; `video/` holds the pipeline that renders them. The chapter list and the transcript match the 90-second showreel: Intro (0:00), Experience (0:06), Tools (0:20), Automation dashboard (0:32), Parallel-safe framework (0:52), Live run (1:06), AI-assisted authoring and CI (1:16), Also shipped (1:26), End card (1:28).
 
-How the cut is made: an animated HTML and CSS storyboard, frames captured with Playwright and Chromium, encoded with ffmpeg at 1920x1080 in H.264, narrated with edge-tts. The edit went from a 15-second cut to a 20-second cut. The site uses the 60-second cut. The `<video>` element loads the files above from this site.
+How the cut is made: an animated HTML and CSS storyboard, frames captured with Playwright and Chromium, encoded with ffmpeg in H.264, narrated with edge-tts. The 1920x1080 master stays outside the repo. The `<video>` element loads the files above from this site.
 
 If an encoded file is larger than 25 MB, switch the player to an unlisted embed on `https://www.youtube-nocookie.com` and leave the video id as an open placeholder. Do not invent the id.
 
