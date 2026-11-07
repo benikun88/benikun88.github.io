@@ -1,115 +1,311 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>BK QA BLOG</title>
-    <link rel="stylesheet" href="mystyle.css">
-    <link rel="stylesheet" href="mystyle3.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Benjamin "Beni" Kun, QA automation engineer</title>
+    <meta name="description" content="QA automation engineer. End-to-end Python suites, parallel runs, reports, and CI for a multi-region SaaS platform.">
+    <link rel="canonical" href="https://benikun88.github.io/">
+    <meta name="theme-color" content="#f3efe6">
+    <meta property="og:title" content="Benjamin &quot;Beni&quot; Kun, QA automation engineer">
+    <meta property="og:description" content="QA automation engineer. End-to-end Python suites, parallel runs, reports, and CI for a multi-region SaaS platform.">
+    <meta property="og:type" content="profile">
+    <meta property="og:url" content="https://benikun88.github.io/">
+    <meta property="og:image" content="https://benikun88.github.io/assets/og-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Benjamin Kun, QA automation engineer">
+    <meta property="profile:first_name" content="Benjamin">
+    <meta property="profile:last_name" content="Kun">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Benjamin &quot;Beni&quot; Kun, QA automation engineer">
+    <meta name="twitter:description" content="QA automation engineer. End-to-end Python suites, parallel runs, reports, and CI for a multi-region SaaS platform.">
+    <meta name="twitter:image" content="https://benikun88.github.io/assets/og-card.png">
+    <meta name="twitter:image:alt" content="Benjamin Kun, QA automation engineer">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Benjamin Kun",
+        "alternateName": ["Beni Kun", "Beni"],
+        "jobTitle": "QA automation engineer",
+        "description": "QA automation engineer. End-to-end Python suites, parallel runs, reports, and CI for a multi-region SaaS platform.",
+        "url": "https://benikun88.github.io/",
+        "sameAs": [
+          "https://www.linkedin.com/in/benjamin-kun",
+          "https://github.com/benikun88"
+        ]
+      }
+    </script>
   </head>
   <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="#top">Beni Kun</a>
+      <nav aria-label="Sections">
+        <a href="#demo">Demo</a>
+        <a href="#work">Work</a>
+        <a href="#principles">How I work</a>
+        <a href="#stack">Stack</a>
+        <a href="#behind">Behind the video</a>
+        <a href="#sample-suite">Sample suite</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+    <main id="content">
+      <section class="hero" id="top" aria-labelledby="name">
+        <p class="kicker">Public portfolio</p>
+        <h1 id="name">Benjamin "Beni" Kun</h1>
+        <p class="role">QA automation engineer</p>
+        <p class="lede">I build end-to-end test frameworks for a multi-region SaaS platform, parallel runs around scarce test data, and the reports and pipelines that show what failed.</p>
+        <div class="actions">
+          <a class="button" href="#demo">Watch demo (60 s)</a>
+          <a class="button button-quiet" href="https://www.linkedin.com/in/benjamin-kun" rel="me">LinkedIn</a>
+          <a class="button button-quiet" href="https://github.com/benikun88" rel="me">GitHub</a>
+          <a class="button button-quiet" href="#sample-suite">Sample suite</a>
+        </div>
+      </section>
 
-    <div class="toptitle" style="padding-left:16px">
-      <h1 style="font-size:60px">BK's QA blog</h1>
-      <br>
-      <h2>Welcome to the QA BLOG</h2>
-    </div>
+      <section id="demo" aria-labelledby="demo-heading">
+        <h2 id="demo-heading">Demo</h2>
+        <p>Sixty seconds. The live portion is the public practice shop at <a href="https://practicesoftwaretesting.com/">practicesoftwaretesting.com</a>, which uses synthetic catalog data. It is not a work system.</p>
+        <figure class="player">
+          <video id="demo-video" controls preload="metadata" poster="assets/poster.jpg" aria-label="60 second demo">
+            <source src="assets/demo.mp4" type="video/mp4">
+            <source src="assets/demo.webm" type="video/webm">
+            <track kind="captions" src="assets/captions.vtt" srclang="en" label="English" default>
+          </video>
+          <figcaption>60-second cut. Chapters follow the narration. English captions are on the track.</figcaption>
+        </figure>
+        <p id="video-status" class="video-status" hidden>The video file is not in this build yet. The chapters and the transcript below follow the 60-second narration.</p>
+        <nav class="chapters" aria-label="Demo chapters">
+          <ol>
+            <li><button type="button" data-start="0">0:00–0:10 Problem</button></li>
+            <li><button type="button" data-start="10">0:10–0:22 Live run</button></li>
+            <li><button type="button" data-start="22">0:22–0:36 Reports</button></li>
+            <li><button type="button" data-start="36">0:36–0:48 CI</button></li>
+            <li><button type="button" data-start="48">0:48–1:00 AI-assisted QA</button></li>
+          </ol>
+        </nav>
+        <details>
+          <summary>Full transcript</summary>
+          <div class="transcript">
+            <h3>Problem, 0:00</h3>
+            <p>I test a multi-region SaaS platform end to end. Parallel runs share one login and scarce SMS phone numbers.</p>
+            <h3>Live run, 0:10</h3>
+            <p>This is a public practice shop with synthetic data, not a work system. I search, filter, and check a cart total with a page object and a visible ready state.</p>
+            <h3>Reports, 0:22</h3>
+            <p>Each run writes JUnit XML and an HTML report, then a dashboard. The dashboard shows the pass-rate trend, a daily chart, and run history. It separates flaky and real failures. Slack links to the run, published on S3 behind CloudFront.</p>
+            <h3>CI, 0:36</h3>
+            <p>GitLab CI runs the suite on Kubernetes after deploy, nightly, and on demand. Jobs that share test data are serialized. Artifacts stay with the run, and an after-script no longer floods the log.</p>
+            <h3>AI-assisted QA, 0:48</h3>
+            <p>Agent skills read the live UI through Chrome DevTools MCP, choose semantic locators, and scaffold the test. Review against team standards happens before merge. I am Beni Kun.</p>
+          </div>
+        </details>
+      </section>
 
-  <div class="topnav">
-    <a class="active" href="index.html">Home</a>
-    <a href="Resources.html">Resources</a>
-    <a href="def.html">QA definition</a>
-    <a href="about.html">About</a>
-  </div>
+      <section id="work" aria-labelledby="work-heading">
+        <h2 id="work-heading">What I did and how</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>End-to-end framework</h3>
+            <dl>
+              <dt>Problem</dt>
+              <dd>A multi-region SaaS platform needed end-to-end checks a reviewer could follow without reading the automation API.</dd>
+              <dt>What I built</dt>
+              <dd>A Python 3.13 suite on pytest and Playwright sync, with a base page class and one wrapper per page, dialog, or wizard. Tests read like manual steps, and Playwright types stay out of them.</dd>
+              <dt>How</dt>
+              <dd>Logs are nested per phase and per step. Each test stores its own logs, screenshots, and network log. Size today: <span class="placeholder">{{N_TESTS}}</span> tests in <span class="placeholder">{{N_MODULES}}</span> modules, with <span class="placeholder">{{N_PAGE_OBJECTS}}</span> page objects.</dd>
+              <dt>Impact</dt>
+              <dd>A failure points at the step and the artifact for that test, so the suite can grow without becoming opaque.</dd>
+            </dl>
+          </article>
+          <article class="card">
+            <h3>Parallel-safe runs</h3>
+            <dl>
+              <dt>Problem</dt>
+              <dd>Workers that run together still share one login, and SMS-capable phone numbers are too scarce to hand out twice.</dd>
+              <dt>What I built</dt>
+              <dd>pytest-xdist workers share one logged-in session. The phone-number pool is taken and released under file locks with timeouts, and each run uses unique data.</dd>
+              <dt>How</dt>
+              <dd>Fixtures tear the data down. Login uses TOTP-based MFA. API clients create the test data and check the responses.</dd>
+              <dt>Impact</dt>
+              <dd>Parallel runs do not take the same phone number, and they do not leave that data behind for the next run.</dd>
+            </dl>
+          </article>
+          <article class="card">
+            <h3>Reporting</h3>
+            <dl>
+              <dt>Problem</dt>
+              <dd>A job log does not show whether the suite is improving, or whether a failure is flaky.</dd>
+              <dt>What I built</dt>
+              <dd>JUnit XML goes to a per-run HTML report and then to a cumulative dashboard: pass-rate trend, daily pass-rate chart, run-history matrix, and flaky versus real failures.</dd>
+              <dt>How</dt>
+              <dd>The dashboard is published to S3 behind CloudFront. Slack notifications carry a direct link to the run.</dd>
+              <dt>Impact</dt>
+              <dd>A lead can open the run, see the trend, and tell a flake from a real failure without asking for a pasted log.</dd>
+            </dl>
+          </article>
+          <article class="card">
+            <h3>CI for the suite</h3>
+            <dl>
+              <dt>Problem</dt>
+              <dd>Post-deploy, nightly, and manual runs share test data, so the jobs have to take turns.</dd>
+              <dt>What I built</dt>
+              <dd>GitLab CI child pipelines on Kubernetes runners, with post-deploy and nightly runs plus manual jobs.</dd>
+              <dt>How</dt>
+              <dd>Resource groups serialize the jobs that share test data, and artifacts are retained. I also fixed a log flood in an after-script.</dd>
+              <dt>Impact</dt>
+              <dd>Shared-data jobs wait their turn, and the after-script no longer buries the job log.</dd>
+            </dl>
+          </article>
+          <article class="card">
+            <h3>Flaky tests</h3>
+            <dl>
+              <dt>Problem</dt>
+              <dd>Suspend and unsuspend, and application scanning, failed on and off. Filter changes and two UI versions made the same failures worse.</dd>
+              <dt>What I built</dt>
+              <dd>Locators that work on the old and the new UI, and backward-compatible checks for filters that changed.</dd>
+              <dt>How</dt>
+              <dd>A step waits until the screen shows the state it needs, instead of sleeping for a fixed time.</dd>
+              <dt>Impact</dt>
+              <dd>Those flows stop failing only because the screen was mid-update or the locator assumed the other UI version.</dd>
+            </dl>
+          </article>
+          <article class="card">
+            <h3>AI-assisted QA</h3>
+            <dl>
+              <dt>Problem</dt>
+              <dd>Drafting a page object from memory was slow, and a locator could miss the UI that was actually on screen.</dd>
+              <dt>What I built</dt>
+              <dd>Reusable agent skills that inspect the live UI through Chrome DevTools MCP, choose semantic locators, scaffold the page object and the test, run a focused check, and self-review against team standards.</dd>
+              <dt>How</dt>
+              <dd>AI code-review rounds run before merge.</dd>
+              <dt>Impact</dt>
+              <dd>A new test is checked against the live UI and team standards before it is merged.</dd>
+            </dl>
+          </article>
+        </div>
+      </section>
 
-  <div class="middle">
-    <h3>This blog is intended for all software testers <br>To get information about the world of QA<br> also to laugh a little
-and especially to learn beyond existing knowledge.</h3>
-  </div>
-<div class="slideshow-container">
+      <section id="principles" aria-labelledby="principles-heading">
+        <h2 id="principles-heading">How I work</h2>
+        <ol class="principles">
+          <li>
+            <h3>Tests read like the manual steps</h3>
+            <p>Playwright stays in the page objects. A reviewer should be able to follow the test the way they would follow a written case.</p>
+          </li>
+          <li>
+            <h3>Parallel runs get their own data</h3>
+            <p>One shared login is enough. Scarce phone numbers are locked, used once, and returned. Teardown puts the pool back.</p>
+          </li>
+          <li>
+            <h3>A failure keeps its evidence</h3>
+            <p>Logs, screenshots, and the network log stay with the test. The dashboard separates flakes from real failures.</p>
+          </li>
+          <li>
+            <h3>Wait for the screen, not the clock</h3>
+            <p>Readiness comes from visible UI state. Locators work on the old and the new UI, including filters that changed.</p>
+          </li>
+          <li>
+            <h3>A draft is not a merge</h3>
+            <p>An agent can scaffold a test from the live UI. Review against team standards still happens before merge.</p>
+          </li>
+        </ol>
+      </section>
 
-<div class="mySlides fade">
-  <img src="images/1.jpg" style="width:100%;height:500px">
+      <section id="stack" aria-labelledby="stack-heading">
+        <h2 id="stack-heading">Stack</h2>
+        <div class="stack">
+          <section>
+            <h3>Testing</h3>
+            <ul>
+              <li>Python 3.13</li>
+              <li>pytest</li>
+              <li>pydantic</li>
+              <li>Faker</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Automation</h3>
+            <ul>
+              <li>Playwright</li>
+              <li>pytest-xdist</li>
+            </ul>
+          </section>
+          <section>
+            <h3>CI/CD</h3>
+            <ul>
+              <li>GitLab CI</li>
+              <li>GitHub Actions</li>
+              <li>Kubernetes</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Reporting</h3>
+            <ul>
+              <li>JUnit XML</li>
+              <li>Allure</li>
+              <li>AWS S3</li>
+              <li>CloudFront</li>
+              <li>Slack API</li>
+            </ul>
+          </section>
+          <section>
+            <h3>AI-assisted QA</h3>
+            <ul>
+              <li>Chrome DevTools MCP</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Tools</h3>
+            <ul>
+              <li>Ruff</li>
+              <li>mypy</li>
+              <li>uv</li>
+              <li>ffmpeg</li>
+              <li>edge-tts</li>
+            </ul>
+          </section>
+        </div>
+      </section>
 
-</div>
+      <section id="behind" aria-labelledby="behind-heading">
+        <h2 id="behind-heading">Behind the video</h2>
+        <p>The demo is an animated HTML and CSS storyboard. Frames are captured with Playwright and Chromium, then encoded with ffmpeg at 1920×1080 in H.264. Narration is text-to-speech from edge-tts.</p>
+        <p>I cut it from 15 seconds to 20 seconds. This page uses the 60-second cut. The player loads <code>assets/demo.mp4</code> and <code>assets/demo.webm</code> from this site.</p>
+      </section>
 
-<div class="mySlides fade">
-  <img src="images/2.jpg" style="width:100%">
+      <section id="sample-suite" aria-labelledby="sample-heading">
+        <h2 id="sample-heading">Sample suite</h2>
+        <p>This is a small public stand-in for the same approach. It targets <a href="https://practicesoftwaretesting.com/">practicesoftwaretesting.com</a> only. The catalog there is synthetic.</p>
+        <p>Eight UI checks cover search, a category filter, price sort, a product page, cart math, sign-in, invoices (the shop’s order history), and an out-of-stock control. Three API checks validate product and category payloads with pydantic. Page objects use role-based locators. There are no fixed sleeps.</p>
+        <p>Sign-in uses the shop’s built-in customer account. Reports land in <code>sample-suite/reports/junit.xml</code> and <code>sample-suite/reports/report.html</code>.</p>
+        <pre><code>cd sample-suite
+python3.13 -m venv .venv
+. .venv/bin/activate
+python -m pip install -r requirements.txt
+python -m playwright install chromium
+python -m pytest</code></pre>
+        <p>The shop refuses a headless Chromium. Run the command on a machine with a display, or use <code>xvfb-run -a python -m pytest</code> on Linux.</p>
+        <p><a href="https://github.com/benikun88/benikun88.github.io/tree/master/sample-suite">Sample suite on GitHub</a></p>
+      </section>
 
-</div>
-
-<div class="mySlides fade">
-  <img src="images/3.jpg" style="width:100%">
-</div>
-
-<div class="mySlides fade">
-  <img src="images/4.jpg" style="width:100%">
-
-</div>
-
-<div class="mySlides fade">
-  <img src="images/5.jpg" style="width:100%">
-
-</div>
-<div class="mySlides fade">
-  <img src="images/11.jpg" style="width:100%;height:300px">
-
-</div>
-<div class="mySlides fade">
-  <img src="images/13.jpg" style="width:100%;height:300px">
-
-</div>
-<div class="mySlides fade">
-  <img src="images/15.jpg" style="width:100%;height:300px">
-
-</div>
-<div class="mySlides fade">
-  <img src="images/17.jpg" style="width:100%;height:300px">
-
-</div>
-
-</div>
-<br>
-
-<div style="text-align:center">
-  <span class="dot"></span>
-  <span class="dot"></span>
-  <span class="dot"></span>
-  <span class="dot"></span>
-  <span class="dot"></span>
-  <span class="dot"></span>
-  <span class="dot"></span>
-  <span class="dot"></span>
-  <span class="dot"></span>
-
-</div>
-
-<div class="copy" style="font:Times New Roman;text-align: center;">
-  <p>&copy; 2020 Benjamin Kun</p>
-
-</div>
-<script>
-var slideIndex = 0;
-showSlides();
-
-function showSlides() {
-  var i;
-  var slides = document.getElementsByClassName("mySlides","mySlides2");
-  var dots = document.getElementsByClassName("dot");
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-  setTimeout(showSlides, 6000); // Change image every 2 seconds
-}
-</script>
-
-
-
+      <section id="contact" aria-labelledby="contact-heading">
+        <h2 id="contact-heading">Contact</h2>
+        <ul class="contact-list">
+          <li><a href="https://www.linkedin.com/in/benjamin-kun" rel="me">LinkedIn</a></li>
+          <li><a href="https://github.com/benikun88" rel="me">GitHub</a></li>
+          <li>Email <span class="placeholder">{{CONTACT_EMAIL}}</span></li>
+        </ul>
+        <p>A public email address is not listed on this page yet.</p>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <p>Benjamin Kun. QA automation engineer.</p>
+    </footer>
+    <script src="script.js"></script>
   </body>
 </html>

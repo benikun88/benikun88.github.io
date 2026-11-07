@@ -1,0 +1,57 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  sample-suite:
+    name: Sample suite
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Install dependencies
+        working-directory: sample-suite
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+          python -m playwright install --with-deps chromium
+          sudo apt-get update
+          sudo apt-get install -y xvfb
+      - name: Run tests
+        working-directory: sample-suite
+        run: xvfb-run -a python -m pytest
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sample-suite-report
+          path: |
+            sample-suite/reports/
+            sample-suite/test-results/
+          if-no-files-found: ignore
+
+  site:
+    name: Site
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r tests/requirements.txt
+          python -m playwright install --with-deps chromium
+      - name: Run tests
+        run: python -m pytest tests
