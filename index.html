@@ -80,7 +80,7 @@
         <p class="role">QA automation engineer</p>
         <p class="lede">I build end-to-end test frameworks for a multi-region SaaS platform, parallel runs around scarce test data, and the reports and pipelines that show what failed.</p>
         <div class="actions">
-          <a class="button" href="#demo">Watch demo (60 s)</a>
+          <a class="button" href="#demo">Watch demo (90 s)</a>
           <a class="button button-quiet" href="https://www.linkedin.com/in/benjamin-kun" rel="me">LinkedIn</a>
           <a class="button button-quiet" href="https://github.com/benikun88" rel="me">GitHub</a>
           <a class="button button-quiet" href="#sample-suite">Sample suite</a>
@@ -89,10 +89,10 @@
 
       <section id="demo" aria-labelledby="demo-heading">
         <h2 id="demo-heading">Demo</h2>
-        <p>Sixty seconds. The live portion is the public practice shop at <a href="https://practicesoftwaretesting.com/">practicesoftwaretesting.com</a>, which uses synthetic catalog data. It is not a work system.</p>
+        <p>Ninety seconds. The live portion is the public practice shop at <a href="https://practicesoftwaretesting.com/">practicesoftwaretesting.com</a>, which uses synthetic catalog data. It is not a work system.</p>
         <figure class="player">
           <div class="stage">
-            <video id="demo-video" controls preload="metadata" poster="assets/poster.jpg" aria-label="60 second demo">
+            <video id="demo-video" controls preload="metadata" poster="assets/poster.jpg" aria-label="90 second demo">
               <source src="assets/demo.mp4" type="video/mp4">
               <source src="assets/demo.webm" type="video/webm">
               <track kind="captions" src="assets/captions.vtt" srclang="en" label="English" default>
@@ -102,7 +102,7 @@
               <p class="time" id="time-readout">0:00 / 0:00</p>
               <label class="seek">
                 <span class="visually-hidden">Seek</span>
-                <input id="seek" type="range" min="0" max="60" value="0" step="0.1">
+                <input id="seek" type="range" min="0" max="90" value="0" step="0.1">
               </label>
               <button type="button" id="caption-toggle" aria-pressed="true">Captions</button>
               <button type="button" id="full-toggle">Full screen</button>
@@ -110,29 +110,40 @@
           </div>
           <nav class="chapters" aria-label="Demo chapters">
             <ol>
-              <li><button type="button" data-start="0"><span>0:00–0:10</span> Problem</button></li>
-              <li><button type="button" data-start="10"><span>0:10–0:22</span> Live run</button></li>
-              <li><button type="button" data-start="22"><span>0:22–0:36</span> Reports</button></li>
-              <li><button type="button" data-start="36"><span>0:36–0:48</span> CI</button></li>
-              <li><button type="button" data-start="48"><span>0:48–1:00</span> AI-assisted QA</button></li>
+              <li><button type="button" data-start="0"><span>0:00–0:06</span> Intro</button></li>
+              <li><button type="button" data-start="6"><span>0:06–0:20</span> Experience</button></li>
+              <li><button type="button" data-start="20"><span>0:20–0:32</span> Tools</button></li>
+              <li><button type="button" data-start="32"><span>0:32–0:52</span> Automation dashboard</button></li>
+              <li><button type="button" data-start="52"><span>0:52–1:06</span> Parallel-safe framework</button></li>
+              <li><button type="button" data-start="66"><span>1:06–1:16</span> Live run</button></li>
+              <li><button type="button" data-start="76"><span>1:16–1:26</span> AI-assisted authoring and CI</button></li>
+              <li><button type="button" data-start="86"><span>1:26–1:28</span> Also shipped</button></li>
+              <li><button type="button" data-start="88"><span>1:28–1:30</span> End card</button></li>
             </ol>
           </nav>
-          <figcaption>60-second cut. Chapters follow the narration. English captions are on the track.</figcaption>
+          <figcaption>90-second cut. Chapters follow the narration. English captions are on the track.</figcaption>
         </figure>
-        <p id="video-status" class="video-status" hidden>The video file is not in this build yet. The chapters and the transcript below follow the 60-second narration.</p>
+        <p id="video-status" class="video-status" hidden>The video file is not in this build yet. The chapters and the transcript below follow the 90-second narration.</p>
         <details>
           <summary>Full transcript</summary>
           <div class="transcript">
-            <h3>Problem, 0:00</h3>
-            <p>I test a multi-region SaaS platform end to end. Parallel runs share one login and scarce SMS phone numbers.</p>
-            <h3>Live run, 0:10</h3>
-            <p>This is a public practice shop with synthetic data, not a work system. I search, filter, and check a cart total with a page object and a visible ready state.</p>
-            <h3>Reports, 0:22</h3>
-            <p>Each run writes JUnit XML and an HTML report, then a dashboard. The dashboard shows the pass-rate trend, a daily chart, and run history. It separates flaky and real failures. Slack links to the run, published on S3 behind CloudFront.</p>
-            <h3>CI, 0:36</h3>
-            <p>GitLab CI runs the suite on Kubernetes after deploy, nightly, and on demand. Jobs that share test data are serialized. Artifacts stay with the run, and an after-script no longer floods the log.</p>
-            <h3>AI-assisted QA, 0:48</h3>
-            <p>Agent skills read the live UI through Chrome DevTools MCP, choose semantic locators, and scaffold the test. Review against team standards happens before merge. I am Beni Kun.</p>
+            <h3>Intro, 0:00</h3>
+            <p>I am Beni Kun. Here is the work.</p>
+            <h3>Experience, 0:06</h3>
+            <p>The focus is end-to-end automation, reporting, and CI for a multi-region SaaS platform. I keep the checks, the reports, and the pipeline in one system. That is the current role.</p>
+            <h3>Tools, 0:20</h3>
+            <p>The core is Python 3.13, pytest, and Playwright. I also use xdist, JUnit, GitLab CI, Kubernetes, S3, CloudFront, and Slack.</p>
+            <h3>Automation dashboard, 0:32</h3>
+            <p>JUnit XML becomes a per-run HTML report. Publishing goes through S3 behind CloudFront. Slack carries the link. The dashboard keeps pass rate, a daily timeline, an environment matrix, and a flaky list. Flaky versus broken comes from run history. Numbers shown are sample data.</p>
+            <h3>Parallel-safe framework, 0:52</h3>
+            <p>A test calls a page wrapper, then Playwright. Workers share one logged-in session under a file lock. A scarce test-data pool is allocated and released under a lock. Logs, artifacts, and teardown stay on the test.</p>
+            <h3>Live run, 1:06</h3>
+            <p>A headed run on the public practice shop. Search, then filter, add to cart. The public sample passed.</p>
+            <h3>AI-assisted authoring and CI, 1:16</h3>
+            <p>With Chrome DevTools MCP I inspect, choose locators, scaffold the test, run a check, and self-review. Sanity jobs keep artifacts.</p>
+            <h3>Also shipped, 1:26</h3>
+            <p>Appeals, driver client, flakes, this pipeline.</p>
+            <h3>End card, 1:28</h3>
           </div>
         </details>
       </section>
@@ -306,7 +317,7 @@
       <section id="behind" aria-labelledby="behind-heading">
         <h2 id="behind-heading">Behind the video</h2>
         <p>The demo is an animated HTML and CSS storyboard. Frames are captured with Playwright and Chromium, then encoded with ffmpeg at 1920×1080 in H.264. Narration is text-to-speech from edge-tts.</p>
-        <p>I cut it from 15 seconds to 20 seconds. This page uses the 60-second cut. The player loads <code>assets/demo.mp4</code> and <code>assets/demo.webm</code> from this site.</p>
+        <p>I cut it from 15 seconds to 20 seconds. This page uses the 90-second cut. The player loads <code>assets/demo.mp4</code> and <code>assets/demo.webm</code> from this site.</p>
       </section>
 
       <section id="sample-suite" aria-labelledby="sample-heading">
@@ -328,8 +339,8 @@ python -m pytest</code></pre>
         <h2 id="hobbies-heading">Hobbies</h2>
         <ul class="hobbies">
           <li>
-            <h3>Marvel comics</h3>
-            <p>I read Marvel comics.</p>
+            <h3>Marvel</h3>
+            <p>I read the comics, watch the movies, and follow the universe.</p>
           </li>
           <li>
             <h3>Technical trading</h3>
