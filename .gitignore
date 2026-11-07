@@ -1,5 +1,13 @@
-video/build/
-__pycache__/
-*.py[cod]
-.pytest_cache/
+node_modules/
 .venv/
+.venv-site/
+__pycache__/
+.pytest_cache/
+*.pyc
+*.py[cod]
+video/build/
+sample-suite/reports/
+sample-suite/test-results/
+tests/test-results/
+playwright-report/
+test-results/

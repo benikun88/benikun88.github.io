@@ -1,0 +1,10 @@
+{
+  "name": "beni-portfolio",
+  "private": true,
+  "scripts": {
+    "sass": "sass scss/main.scss styles.css --style=compressed --no-source-map"
+  },
+  "devDependencies": {
+    "sass": "^1.83.0"
+  }
+}
