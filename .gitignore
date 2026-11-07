@@ -4,6 +4,8 @@ node_modules/
 __pycache__/
 .pytest_cache/
 *.pyc
+*.py[cod]
+video/build/
 sample-suite/reports/
 sample-suite/test-results/
 tests/test-results/

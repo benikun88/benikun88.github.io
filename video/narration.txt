@@ -1,0 +1,151 @@
+# Career showreel narration
+# Voice: en-US-AndrewNeural, rate -4% (edge-tts). Synthetic voice, not a recording of Beni.
+# Scene windows are fixed. Measured cues below the marker are rewritten by video/render.py.
+# Re-render: python video/render.py
+# cv.yml is not in this repo. Scene 2 shows the current role only.
+
+voice: en-US-AndrewNeural
+rate: -4%
+
+[chapter 0 6 intro | Intro]
+I am Beni Kun. Here is the work.
+
+[chapter 6 20 experience | Experience]
+The focus is end-to-end automation, reporting, and CI for a multi-region SaaS platform. I keep the checks, the reports, and the pipeline in one system. That is the current role.
+
+[chapter 20 32 tools | Tools and frameworks]
+The core is Python 3.13, pytest, and Playwright. I also use xdist, JUnit, GitLab CI, Kubernetes, S3, CloudFront, and Slack.
+
+[chapter 32 52 dashboard | Automation dashboard]
+JUnit XML becomes a per-run HTML report. Publishing goes through S3 behind CloudFront. Slack carries the link. The dashboard keeps pass rate, a daily timeline, an environment matrix, and a flaky list. Flaky versus broken comes from run history. Numbers shown are sample data.
+
+[chapter 52 66 framework | Parallel-safe framework]
+A test calls a page wrapper, then Playwright. Workers share one logged-in session under a file lock. A scarce test-data pool is allocated and released under a lock. Logs, artifacts, and teardown stay on the test.
+
+[chapter 66 76 live | Live run]
+A headed run on the public practice shop. Search, then filter, add to cart. The public sample passed.
+
+[chapter 76 86 authoring | Authoring and CI]
+With Chrome DevTools MCP I inspect, choose locators, scaffold the test, run a check, and self-review. Sanity jobs keep artifacts.
+
+[chapter 86 90 close | Also shipped]
+Appeals, driver client, flakes, this pipeline.
+
+[teaser 0 6 intro | Intro]
+I am Beni Kun. Here is the work.
+
+[teaser 6 20 role | Experience]
+The focus is end-to-end automation, reporting, and CI for a multi-region SaaS platform. I keep the checks, the reports, and the pipeline in one system.
+
+[teaser 20 30 dash | Dashboard]
+The dashboard keeps a pass rate, a daily timeline, and a flaky list. Numbers on screen are sample data.
+
+# BEGIN MEASURED
+# Cue times include the lead-in. Rewritten by video/render.py.
+# tools speech sped by atempo 1.047
+# dashboard speech sped by atempo 1.026
+# framework speech sped by atempo 1.051
+# authoring speech sped by atempo 1.020
+# close speech sped by atempo 1.039
+
+00:00:00.250 --> 00:00:01.497
+I am Beni Kun.
+
+00:00:01.502 --> 00:00:02.674
+Here is the work.
+
+00:00:06.250 --> 00:00:11.808
+The focus is end-to-end automation, reporting, and CI for a multi-region SaaS
+
+00:00:11.808 --> 00:00:12.458
+platform.
+
+00:00:12.463 --> 00:00:16.651
+I keep the checks, the reports, and the pipeline in one system.
+
+00:00:16.656 --> 00:00:18.126
+That is the current role.
+
+00:00:20.248 --> 00:00:24.575
+The core is Python 3.13, pytest, and Playwright.
+
+00:00:24.580 --> 00:00:31.796
+I also use xdist, JUnit, GitLab CI, Kubernetes, S3, CloudFront, and Slack.
+
+00:00:32.249 --> 00:00:36.015
+JUnit XML becomes a per-run HTML report.
+
+00:00:36.020 --> 00:00:39.023
+Publishing goes through S3 behind CloudFront.
+
+00:00:39.028 --> 00:00:40.584
+Slack carries the link.
+
+00:00:40.589 --> 00:00:46.159
+The dashboard keeps pass rate, a daily timeline, an environment matrix, and a
+
+00:00:46.159 --> 00:00:46.955
+flaky list.
+
+00:00:46.960 --> 00:00:49.988
+Flaky versus broken comes from run history.
+
+00:00:49.993 --> 00:00:51.783
+Numbers shown are sample data.
+
+00:00:52.248 --> 00:00:54.944
+A test calls a page wrapper, then Playwright.
+
+00:00:54.949 --> 00:00:58.325
+Workers share one logged-in session under a file lock.
+
+00:00:58.330 --> 00:01:02.226
+A scarce test-data pool is allocated and released under a lock.
+
+00:01:02.231 --> 00:01:05.785
+Logs, artifacts, and teardown stay on the test.
+
+00:01:06.250 --> 00:01:08.721
+A headed run on the public practice shop.
+
+00:01:08.726 --> 00:01:11.468
+Search, then filter, add to cart.
+
+00:01:11.473 --> 00:01:13.192
+The public sample passed.
+
+00:01:16.249 --> 00:01:22.468
+With Chrome DevTools MCP I inspect, choose locators, scaffold the test, run a check,
+
+00:01:22.468 --> 00:01:23.652
+and self-review.
+
+00:01:23.657 --> 00:01:25.790
+Sanity jobs keep artifacts.
+
+00:01:26.248 --> 00:01:29.797
+Appeals, driver client, flakes, this pipeline.
+
+# teaser
+00:00:00.250 --> 00:00:01.497
+I am Beni Kun.
+
+00:00:01.502 --> 00:00:02.674
+Here is the work.
+
+00:00:06.250 --> 00:00:11.808
+The focus is end-to-end automation, reporting, and CI for a multi-region SaaS
+
+00:00:11.808 --> 00:00:12.458
+platform.
+
+00:00:12.463 --> 00:00:16.656
+I keep the checks, the reports, and the pipeline in one system.
+
+00:00:20.250 --> 00:00:25.013
+The dashboard keeps a pass rate, a daily timeline, and a flaky list.
+
+00:00:25.018 --> 00:00:27.309
+Numbers on screen are sample data.
+
+# END MEASURED

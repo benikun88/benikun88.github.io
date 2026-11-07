@@ -1,34 +1,121 @@
 WEBVTT
 
-00:00.000 --> 00:05.000
-I test a multi-region SaaS platform end to end.
+NOTE
+English narration for the career showreel.
 
-00:05.000 --> 00:10.000
-Parallel runs share one login and scarce SMS phone numbers.
+1
+00:00:00.250 --> 00:00:01.497
+I am Beni Kun.
 
-00:10.000 --> 00:16.000
-This is a public practice shop with synthetic data, not a work system.
+2
+00:00:01.502 --> 00:00:02.674
+Here is the work.
 
-00:16.000 --> 00:22.000
-I search, filter, and check a cart total with a page object and a visible ready state.
+3
+00:00:06.250 --> 00:00:11.808
+The focus is end-to-end automation,
+reporting, and CI for a multi-region SaaS
 
-00:22.000 --> 00:28.000
-Each run writes JUnit XML and an HTML report, then a dashboard.
+4
+00:00:11.808 --> 00:00:12.458
+platform.
 
-00:28.000 --> 00:32.000
-The dashboard shows the pass-rate trend, a daily chart, and run history.
+5
+00:00:12.463 --> 00:00:16.651
+I keep the checks, the reports, and the
+pipeline in one system.
 
-00:32.000 --> 00:36.000
-It separates flaky and real failures. Slack links to the run, published on S3 behind CloudFront.
+6
+00:00:16.656 --> 00:00:18.126
+That is the current role.
 
-00:36.000 --> 00:42.000
-GitLab CI runs the suite on Kubernetes after deploy, nightly, and on demand.
+7
+00:00:20.248 --> 00:00:24.575
+The core is Python 3.13, pytest, and
+Playwright.
 
-00:42.000 --> 00:48.000
-Jobs that share test data are serialized. Artifacts stay with the run, and an after-script no longer floods the log.
+8
+00:00:24.580 --> 00:00:31.796
+I also use xdist, JUnit, GitLab CI,
+Kubernetes, S3, CloudFront, and Slack.
 
-00:48.000 --> 00:54.000
-Agent skills read the live UI through Chrome DevTools MCP, choose semantic locators, and scaffold the test.
+9
+00:00:32.249 --> 00:00:36.015
+JUnit XML becomes a per-run HTML report.
 
-00:54.000 --> 01:00.000
-Review against team standards happens before merge. I am Beni Kun.
+10
+00:00:36.020 --> 00:00:39.023
+Publishing goes through S3 behind
+CloudFront.
+
+11
+00:00:39.028 --> 00:00:40.584
+Slack carries the link.
+
+12
+00:00:40.589 --> 00:00:46.159
+The dashboard keeps pass rate, a daily
+timeline, an environment matrix, and a
+
+13
+00:00:46.159 --> 00:00:46.955
+flaky list.
+
+14
+00:00:46.960 --> 00:00:49.988
+Flaky versus broken comes from run
+history.
+
+15
+00:00:49.993 --> 00:00:51.783
+Numbers shown are sample data.
+
+16
+00:00:52.248 --> 00:00:54.944
+A test calls a page wrapper, then
+Playwright.
+
+17
+00:00:54.949 --> 00:00:58.325
+Workers share one logged-in session under
+a file lock.
+
+18
+00:00:58.330 --> 00:01:02.226
+A scarce test-data pool is allocated and
+released under a lock.
+
+19
+00:01:02.231 --> 00:01:05.785
+Logs, artifacts, and teardown stay on the
+test.
+
+20
+00:01:06.250 --> 00:01:08.721
+A headed run on the public practice shop.
+
+21
+00:01:08.726 --> 00:01:11.468
+Search, then filter, add to cart.
+
+22
+00:01:11.473 --> 00:01:13.192
+The public sample passed.
+
+23
+00:01:16.249 --> 00:01:22.468
+With Chrome DevTools MCP I inspect, choose
+locators, scaffold the test, run a check,
+
+24
+00:01:22.468 --> 00:01:23.652
+and self-review.
+
+25
+00:01:23.657 --> 00:01:25.790
+Sanity jobs keep artifacts.
+
+26
+00:01:26.248 --> 00:01:29.797
+Appeals, driver client, flakes, this
+pipeline.

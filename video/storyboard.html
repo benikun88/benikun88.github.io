@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Career showreel storyboard — Benjamin Kun</title>
+  <style>
+    body { margin: 0; background: #f6f3ed; color: #1c1915; font: 18px/1.5 Georgia, serif; }
+    main { max-width: 840px; margin: 0 auto; padding: 48px 24px 80px; }
+    h1, h2, h3 { font-family: "Segoe UI", sans-serif; letter-spacing: -0.02em; }
+    h1 { font-size: 36px; margin: 0 0 8px; }
+    h2 { font-size: 24px; margin: 36px 0 8px; }
+    h3 { font-size: 18px; margin: 22px 0 6px; }
+    code, .mono { font-family: ui-monospace, monospace; font-size: 0.92em; }
+    pre { background: #1c1915; color: #f4f1ea; padding: 16px; border-radius: 12px; overflow: auto; font-family: ui-monospace, monospace; font-size: 14px; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { text-align: left; vertical-align: top; padding: 8px 10px 8px 0; border-bottom: 1px solid #e0d8cc; }
+    th { font-family: "Segoe UI", sans-serif; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: #6d675e; }
+    .note { background: #fff; border: 1px solid #e0d8cc; border-radius: 12px; padding: 14px 16px; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Career showreel storyboard</h1>
+  <p>Benjamin &quot;Beni&quot; Kun · Senior QA Automation Engineer · 90 seconds. Audience: hiring managers and QA leads. First person, factual.</p>
+  <p>There is no <span class="mono">cv/cv.yml</span> on this branch. After that check, scene 2 shows only the current role: <span class="mono">current role · Present</span>, with the focus line and no employer name and no start date.</p>
+
+  <h2>Re-render</h2>
+  <pre>uv venv --python 3.13 .venv
+source .venv/bin/activate
+uv pip install -r video/requirements.txt
+python -m playwright install chromium
+python video/render.py</pre>
+  <p>The script starts xvfb when <span class="mono">DISPLAY</span> is unset. <span class="mono">--preview-slides</span> writes stills only. <span class="mono">--reuse-build</span> keeps an existing JUnit file and tour recording.</p>
+  <p>The 1920×1080 master is written to <span class="mono">/home/ubuntu/showreel-master.mp4</span> and is not part of the git repo. Web files are 1280×720 under <span class="mono">assets/</span>.</p>
+
+  <h2>Scenes</h2>
+  <table>
+    <tr><th>Time</th><th>Scene</th><th>On screen</th></tr>
+    <tr><td>0:00–0:06</td><td>Intro</td><td>Name, title, chips: Experience, Tools, Projects.</td></tr>
+    <tr><td>0:06–0:20</td><td>Experience</td><td>current role · Present. End-to-end automation, reporting, and CI for a multi-region SaaS platform.</td></tr>
+    <tr><td>0:20–0:32</td><td>Tools</td><td>16 text badges in four groups. No logos.</td></tr>
+    <tr><td>0:32–0:38</td><td>Dashboard pipeline</td><td>JUnit XML, per-run HTML, S3 behind CloudFront, cumulative dashboard, Slack message with report link. Corner label: Sample data.</td></tr>
+    <tr><td>0:38–0:52</td><td>Dashboard</td><td>Sample health, pass rate, sample quality gate, daily pass/fail/skip bars, test-by-environment day blocks, flaky list. Callout: Flaky vs. broken, classified from run history. Corner label: Sample data.</td></tr>
+    <tr><td>0:52–1:06</td><td>Framework</td><td>test, then page wrapper, then Playwright. Workers, one logged-in session, locked file. Scarce test-data pool allocated and released under a lock. Callouts: nested logs, per-test artifacts, teardown cleanup.</td></tr>
+    <tr><td>1:06–1:16</td><td>Live run</td><td>Headed Playwright only, on the public practice shop. Search, filter, add to cart. Result panel shows the public sample passed.</td></tr>
+    <tr><td>1:16–1:26</td><td>Authoring and CI</td><td>Five steps, then one CI line: sanity jobs on dev checkout, resource groups per shared pool, artifacts kept.</td></tr>
+    <tr><td>1:26–1:28</td><td>Also shipped</td><td>eligibility and appeals flow automation; driver API client; flaky-test stabilization; this video pipeline.</td></tr>
+    <tr><td>1:28–1:30</td><td>End card</td><td>Site URL, LinkedIn URL, QR code aimed at https://benikun88.github.io/.</td></tr>
+  </table>
+
+  <h2>Narration</h2>
+  <p>Voice is en-US-AndrewNeural at rate −4%, edge-tts. Loudness is −16 LUFS. No music. Measured cue times are rewritten into <span class="mono">video/narration.txt</span>. Captions are <span class="mono">assets/captions.vtt</span> and <span class="mono">assets/captions.srt</span>. Each cue is at most two lines and at most 17 characters per second.</p>
+  <ol>
+    <li>I am Beni Kun. Here is the work.</li>
+    <li>The focus is end-to-end automation, reporting, and CI for a multi-region SaaS platform. I keep the checks, the reports, and the pipeline in one system. That is the current role.</li>
+    <li>The core is Python 3.13, pytest, and Playwright. I also use xdist, JUnit, GitLab CI, Kubernetes, S3, CloudFront, and Slack.</li>
+    <li>JUnit XML becomes a per-run HTML report. Publishing goes through S3 behind CloudFront. Slack carries the link. The dashboard keeps pass rate, a daily timeline, an environment matrix, and a flaky list. Flaky versus broken comes from run history. Numbers shown are sample data.</li>
+    <li>A test calls a page wrapper, then Playwright. Workers share one logged-in session under a file lock. A scarce test-data pool is allocated and released under a lock. Logs, artifacts, and teardown stay on the test.</li>
+    <li>A headed run on the public practice shop. Search, then filter, add to cart. The public sample passed.</li>
+    <li>With Chrome DevTools MCP I inspect, choose locators, scaffold the test, run a check, and self-review. Sanity jobs keep artifacts.</li>
+    <li>Appeals, driver client, flakes, this pipeline.</li>
+  </ol>
+  <p>The spoken close is shorter than the four on-screen lines. A twelve-word sentence does not fit in two seconds at a listenable pace, so the full phrases stay on the card and the voice names them in brief. That line is timed from 1:26 through the end card. The end card itself is visual: the URLs and the QR code.</p>
+  <p>The 30 second teaser is intro, the experience line, and a 10 second dashboard highlight. It is <span class="mono">assets/teaser.mp4</span>, with burned-in captions and <span class="mono">assets/teaser.vtt</span>.</p>
+
+  <h2>Sample dashboard</h2>
+  <p>Figures come from <span class="mono">video/sample_data.py</span> with seed 20261107. Test names are invented. The quality gate drawn on screen is a sample gate, not a measured production gate. The corner label is Sample data.</p>
+
+  <h2>Live shop</h2>
+  <p>Recording is Playwright video of headed Chromium, not a desktop capture. The only site is https://practicesoftwaretesting.com/. The tour searches, filters by the Hand Tools label, and adds a product to the cart. Product photos that return HTTP 403 as embedded images are fetched with a direct GET of the same public URL, which returns the image bytes. Prices and controls are the live page.</p>
+
+  <h2>Review</h2>
+  <div class="note">
+    <ul>
+      <li>The narration is written in your voice from the public-safe facts in the brief. Confirm each sentence before this represents you.</li>
+      <li>The voice is synthetic. Listen to pytest-xdist, TOTP is not spoken in this cut, and listen to MCP, ffmpeg, and edge-tts on the tools card.</li>
+      <li>Title on screen is Senior QA Automation Engineer, as specified for this cut.</li>
+      <li>No employer name and no start date. Earlier roles are not shown because there is no public-safe cv.yml.</li>
+      <li>Dashboard numbers are sample data. Do not describe them as production results.</li>
+      <li>The CI and authoring frames are diagrams, not screenshots of a private system.</li>
+    </ul>
+  </div>
+</main>
+</body>
+</html>
