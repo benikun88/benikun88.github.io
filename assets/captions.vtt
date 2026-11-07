@@ -1,0 +1,93 @@
+WEBVTT
+
+NOTE
+English narration for the portfolio demo. Timed to the rendered voice.
+
+1
+00:00:00.370 --> 00:00:02.481
+End-to-end checks fail quietly.
+
+2
+00:00:02.481 --> 00:00:03.953
+A page is not ready.
+
+3
+00:00:03.953 --> 00:00:06.075
+Two workers share one account.
+
+4
+00:00:06.075 --> 00:00:08.224
+The report never leaves the runner.
+
+5
+00:00:10.370 --> 00:00:13.406
+A headed Playwright run on the public
+practice shop.
+
+6
+00:00:13.406 --> 00:00:17.885
+Page objects open a product, add it to the
+cart, and read the total.
+
+7
+00:00:17.885 --> 00:00:19.630
+The data is synthetic.
+
+8
+00:00:22.370 --> 00:00:24.221
+Pytest writes JUnit.
+
+9
+00:00:24.221 --> 00:00:27.333
+The report turns that file into HTML.
+
+10
+00:00:27.333 --> 00:00:29.234
+A dashboard lists the run.
+
+11
+00:00:29.234 --> 00:00:33.922
+The framework publishes that HTML through
+S3 and CloudFront.
+
+12
+00:00:33.922 --> 00:00:35.341
+Slack gets the link.
+
+13
+00:00:36.369 --> 00:00:38.622
+GitLab CI on Kubernetes.
+
+14
+00:00:38.622 --> 00:00:40.405
+Post-deploy and nightly.
+
+15
+00:00:40.405 --> 00:00:42.214
+pytest-xdist in parallel.
+
+16
+00:00:42.214 --> 00:00:43.909
+Scarce accounts stay locked.
+
+17
+00:00:43.909 --> 00:00:45.819
+Login uses TOTP.
+
+18
+00:00:45.819 --> 00:00:47.640
+API clients do setup.
+
+19
+00:00:48.370 --> 00:00:52.096
+I use Chrome DevTools MCP skills while I
+write the check.
+
+20
+00:00:52.096 --> 00:00:54.830
+The test waits until the UI is visible.
+
+21
+00:00:54.830 --> 00:00:59.427
+Playwright frames, ffmpeg, and edge-tts
+finish the cut.
