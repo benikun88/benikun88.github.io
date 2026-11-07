@@ -1,6 +1,13 @@
 # Benjamin "Beni" Kun
 
-Public portfolio for a QA automation engineer. Static HTML, CSS, and vanilla JS. Intended live URL: <https://benikun88.github.io/>.
+Public portfolio for a QA automation engineer. HTML, Sass, and vanilla JS. Intended live URL: <https://benikun88.github.io/>.
+
+Styles live in `scss/` and compile to `styles.css`.
+
+```bash
+npm install
+npm run sass
+```
 
 ## Run the site
 

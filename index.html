@@ -6,7 +6,7 @@
     <title>Benjamin "Beni" Kun, QA automation engineer</title>
     <meta name="description" content="QA automation engineer. End-to-end Python suites, parallel runs, reports, and CI for a multi-region SaaS platform.">
     <link rel="canonical" href="https://benikun88.github.io/">
-    <meta name="theme-color" content="#f2f7f7">
+    <meta name="theme-color" content="#e7f5f3">
     <script>
       (function () {
         var theme = "light";
@@ -19,7 +19,7 @@
         }
         document.documentElement.setAttribute("data-theme", theme);
         var meta = document.querySelector('meta[name="theme-color"]');
-        if (meta) meta.setAttribute("content", theme === "dark" ? "#0c161b" : "#f2f7f7");
+        if (meta) meta.setAttribute("content", theme === "dark" ? "#071416" : "#e7f5f3");
       })();
     </script>
     <meta property="og:title" content="Benjamin &quot;Beni&quot; Kun, QA automation engineer">
@@ -56,22 +56,28 @@
     </script>
   </head>
   <body>
+    <div class="progress" id="scroll-progress" aria-hidden="true"></div>
     <a class="skip-link" href="#content">Skip to content</a>
-    <header class="site-header">
-      <a class="brand" href="#top">Beni Kun</a>
-      <div class="header-bar">
-        <nav aria-label="Sections">
-          <a href="#demo">Demo</a>
-          <a href="#work">Work</a>
-          <a href="#principles">How I work</a>
-          <a href="#stack">Stack</a>
-          <a href="#behind">Behind the video</a>
-          <a href="#sample-suite">Sample suite</a>
-          <a href="#hobbies">Hobbies</a>
-          <a href="#contact">Contact</a>
-        </nav>
-        <button type="button" id="theme-toggle" aria-pressed="false">Dark mode</button>
-      </div>
+    <div class="app">
+    <header class="rail">
+      <a class="brand" href="#top">
+        <span class="brand-mark" aria-hidden="true"></span>
+        Beni Kun
+      </a>
+      <p class="rail-role">QA automation engineer</p>
+      <p class="rail-now">Now viewing <span id="rail-section">Intro</span></p>
+      <nav aria-label="Sections">
+        <a href="#top">Intro</a>
+        <a href="#demo">Demo</a>
+        <a href="#work">Work</a>
+        <a href="#principles">How I work</a>
+        <a href="#stack">Stack</a>
+        <a href="#behind">Behind the video</a>
+        <a href="#sample-suite">Sample suite</a>
+        <a href="#hobbies">Hobbies</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button type="button" id="theme-toggle" aria-pressed="false">Dark mode</button>
     </header>
     <main id="content">
       <section class="hero" id="top" aria-labelledby="name">
@@ -359,6 +365,7 @@ python -m pytest</code></pre>
         <p>A public email address is not listed on this page yet.</p>
       </section>
     </main>
+    </div>
     <footer class="site-footer">
       <p>Benjamin Kun. QA automation engineer.</p>
     </footer>

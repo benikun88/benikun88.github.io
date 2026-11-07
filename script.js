@@ -173,7 +173,7 @@
   function paint(theme) {
     document.documentElement.setAttribute("data-theme", theme);
     var meta = document.querySelector('meta[name="theme-color"]');
-    if (meta) meta.setAttribute("content", theme === "dark" ? "#0c161b" : "#f2f7f7");
+    if (meta) meta.setAttribute("content", theme === "dark" ? "#071416" : "#e7f5f3");
     var dark = theme === "dark";
     toggle.textContent = dark ? "Light mode" : "Dark mode";
     toggle.setAttribute("aria-pressed", dark ? "true" : "false");
@@ -189,4 +189,36 @@
     }
     paint(next);
   });
+})();
+
+(function () {
+  var bar = document.getElementById("scroll-progress");
+  var label = document.getElementById("rail-section");
+  var links = Array.prototype.slice.call(document.querySelectorAll(".rail nav a"));
+  var sections = links.map(function (link) {
+    return document.getElementById(link.getAttribute("href").slice(1));
+  }).filter(Boolean);
+
+  function paint() {
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    var amount = max > 0 ? Math.min(1, window.scrollY / max) : 0;
+    if (bar) bar.style.transform = "scaleX(" + amount + ")";
+    var current = sections[0];
+    sections.forEach(function (section) {
+      if (section.getBoundingClientRect().top <= 140) current = section;
+    });
+    if (!current) return;
+    if (label) {
+      var heading = current.querySelector("h2");
+      label.textContent = current.id === "top" ? "Intro" : (heading ? heading.textContent : current.id);
+    }
+    links.forEach(function (link) {
+      if (link.getAttribute("href") === "#" + current.id) link.setAttribute("aria-current", "true");
+      else link.removeAttribute("aria-current");
+    });
+  }
+
+  paint();
+  window.addEventListener("scroll", paint, { passive: true });
+  window.addEventListener("resize", paint);
 })();

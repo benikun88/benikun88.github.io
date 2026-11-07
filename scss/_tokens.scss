@@ -1,0 +1,52 @@
+@use "sass:map";
+
+$light: (
+  bg: #e7f5f3,
+  surface: #f8fffe,
+  ink: #062228,
+  muted: #35555a,
+  line: #b7d4d0,
+  aqua: #067874,
+  aqua-ink: #045e5b,
+  on-aqua: #f3fffe,
+  well: #041316,
+  glow: #12b5b0
+);
+
+$dark: (
+  bg: #071416,
+  surface: #0d2428,
+  ink: #e7f6f4,
+  muted: #b7d4d0,
+  line: #1e3d42,
+  aqua: #5eead4,
+  aqua-ink: #7df6e4,
+  on-aqua: #042226,
+  well: #041316,
+  glow: #5eead4
+);
+
+$rail: #041316;
+$rail-ink: #e7f6f4;
+$rail-muted: #9ec9c4;
+$rail-line: #1c3c40;
+
+$sans: "Segoe UI", "Liberation Sans", system-ui, sans-serif;
+$serif: "Iowan Old Style", Palatino, Georgia, "Liberation Serif", serif;
+$mono: ui-monospace, "Liberation Mono", Menlo, Consolas, monospace;
+
+$step-0: clamp(1.02rem, 0.98rem + 0.2vw, 1.125rem);
+$step-1: clamp(1.3rem, 1.05rem + 0.8vw, 1.7rem);
+$step-2: clamp(1.8rem, 1.2rem + 1.6vw, 2.5rem);
+$step-3: clamp(3rem, 1.2rem + 6vw, 6.2rem);
+
+@mixin theme($tokens) {
+  @each $name, $value in $tokens {
+    --#{"" + $name}: #{$value};
+  }
+}
+
+@mixin focus-ring {
+  outline: 2px solid var(--glow);
+  outline-offset: 3px;
+}
