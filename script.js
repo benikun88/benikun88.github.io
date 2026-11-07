@@ -42,7 +42,7 @@
   }
 
   function paint() {
-    var duration = Number.isFinite(video.duration) ? video.duration : 60;
+    var duration = Number.isFinite(video.duration) ? video.duration : 90;
     readout.textContent = clock(video.currentTime) + " / " + clock(video.duration);
     if (document.activeElement !== seek) {
       seek.max = String(duration);
