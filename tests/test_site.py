@@ -1,4 +1,6 @@
+import hashlib
 import re
+from pathlib import Path
 
 from axe_playwright_python.sync_playwright import Axe
 from playwright.sync_api import expect
@@ -81,6 +83,17 @@ def test_profile_and_contact_links(site):
     expect(site.locator('meta[property="og:image"]')).to_have_attribute(
         "content", "https://benikun88.github.io/assets/og-card.png"
     )
+
+
+def test_assets_are_requested_by_content_hash(site):
+    root = Path(__file__).resolve().parents[1]
+    for selector, attribute, name in (
+        ('link[rel="stylesheet"]', "href", "styles.css"),
+        ("script[src]", "src", "script.js"),
+    ):
+        digest = hashlib.sha256((root / name).read_bytes()).hexdigest()[:8]
+        actual = site.locator(selector).get_attribute(attribute)
+        assert actual == f"{name}?v={digest}", "run `npm run build` after changing styles or script"
 
 
 def test_poster_and_captions_are_served(page, site_url):

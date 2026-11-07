@@ -6,8 +6,10 @@ Styles live in `scss/` and compile to `styles.css`. Dark is the default theme; t
 
 ```bash
 npm install
-npm run sass
+npm run build
 ```
+
+`npm run build` compiles the Sass and stamps `index.html` with a content hash for `styles.css` and `script.js` (`styles.css?v=…`). GitHub Pages lets browsers cache those files for 10 minutes, so without the stamp a visitor can get new HTML with an old stylesheet. Commit the stamped `index.html`; a site test fails if the stamp is stale.
 
 ## Run the site
 

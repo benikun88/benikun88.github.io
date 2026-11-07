@@ -32,7 +32,7 @@ jobs:
       - name: Build CSS
         run: |
           npm install
-          npm run sass
+          npm run build
 
       - name: Prepare site bundle
         run: |
