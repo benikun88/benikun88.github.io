@@ -10,6 +10,7 @@ HEADINGS = (
     "Stack",
     "Behind the video",
     "Sample suite",
+    "Hobbies",
     "Contact",
 )
 

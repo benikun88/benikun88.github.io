@@ -484,7 +484,8 @@ summary:hover {
 
 #work,
 #principles,
-#stack {
+#stack,
+#hobbies {
   container-type: inline-size;
 }
 
@@ -607,6 +608,32 @@ summary:hover {
   border-top: 1px solid var(--line);
 }
 
+.hobbies {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  margin: 0;
+  padding: 0;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+
+.hobbies li {
+  max-width: none;
+  margin: 0;
+  padding: 1.15rem 1.2rem 1.3rem;
+  background: var(--surface);
+}
+
+.hobbies h3 {
+  margin-bottom: 0.35rem;
+}
+
+.hobbies p {
+  margin: 0;
+}
+
 .contact-list {
   list-style: none;
   margin: 0;
@@ -682,6 +709,10 @@ pre code {
 @container (min-width: 46rem) {
   #stack .stack {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  #hobbies .hobbies {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
