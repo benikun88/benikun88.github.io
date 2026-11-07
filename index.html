@@ -6,7 +6,7 @@
     <title>Benjamin "Beni" Kun, QA automation engineer</title>
     <meta name="description" content="QA automation engineer. End-to-end Python suites, parallel runs, reports, and CI for a multi-region SaaS platform.">
     <link rel="canonical" href="https://benikun88.github.io/">
-    <meta name="theme-color" content="#f3efe6">
+    <meta name="theme-color" content="#14120f">
     <meta property="og:title" content="Benjamin &quot;Beni&quot; Kun, QA automation engineer">
     <meta property="og:description" content="QA automation engineer. End-to-end Python suites, parallel runs, reports, and CI for a multi-region SaaS platform.">
     <meta property="og:type" content="profile">
@@ -72,23 +72,35 @@
         <h2 id="demo-heading">Demo</h2>
         <p>Sixty seconds. The live portion is the public practice shop at <a href="https://practicesoftwaretesting.com/">practicesoftwaretesting.com</a>, which uses synthetic catalog data. It is not a work system.</p>
         <figure class="player">
-          <video id="demo-video" controls preload="metadata" poster="assets/poster.jpg" aria-label="60 second demo">
-            <source src="assets/demo.mp4" type="video/mp4">
-            <source src="assets/demo.webm" type="video/webm">
-            <track kind="captions" src="assets/captions.vtt" srclang="en" label="English" default>
-          </video>
+          <div class="stage">
+            <video id="demo-video" controls preload="metadata" poster="assets/poster.jpg" aria-label="60 second demo">
+              <source src="assets/demo.mp4" type="video/mp4">
+              <source src="assets/demo.webm" type="video/webm">
+              <track kind="captions" src="assets/captions.vtt" srclang="en" label="English" default>
+            </video>
+            <div class="hud" role="group" aria-label="Playback">
+              <button type="button" id="play-toggle">Play</button>
+              <p class="time" id="time-readout">0:00 / 0:00</p>
+              <label class="seek">
+                <span class="visually-hidden">Seek</span>
+                <input id="seek" type="range" min="0" max="60" value="0" step="0.1">
+              </label>
+              <button type="button" id="caption-toggle" aria-pressed="true">Captions</button>
+              <button type="button" id="full-toggle">Full screen</button>
+            </div>
+          </div>
+          <nav class="chapters" aria-label="Demo chapters">
+            <ol>
+              <li><button type="button" data-start="0"><span>0:00–0:10</span> Problem</button></li>
+              <li><button type="button" data-start="10"><span>0:10–0:22</span> Live run</button></li>
+              <li><button type="button" data-start="22"><span>0:22–0:36</span> Reports</button></li>
+              <li><button type="button" data-start="36"><span>0:36–0:48</span> CI</button></li>
+              <li><button type="button" data-start="48"><span>0:48–1:00</span> AI-assisted QA</button></li>
+            </ol>
+          </nav>
           <figcaption>60-second cut. Chapters follow the narration. English captions are on the track.</figcaption>
         </figure>
         <p id="video-status" class="video-status" hidden>The video file is not in this build yet. The chapters and the transcript below follow the 60-second narration.</p>
-        <nav class="chapters" aria-label="Demo chapters">
-          <ol>
-            <li><button type="button" data-start="0">0:00–0:10 Problem</button></li>
-            <li><button type="button" data-start="10">0:10–0:22 Live run</button></li>
-            <li><button type="button" data-start="22">0:22–0:36 Reports</button></li>
-            <li><button type="button" data-start="36">0:36–0:48 CI</button></li>
-            <li><button type="button" data-start="48">0:48–1:00 AI-assisted QA</button></li>
-          </ol>
-        </nav>
         <details>
           <summary>Full transcript</summary>
           <div class="transcript">
